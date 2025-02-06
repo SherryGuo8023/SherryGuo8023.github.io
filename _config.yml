@@ -24,9 +24,9 @@ author:
   avatar           : "profile.png"
   name             : "Yunjia Guo"
   pronouns         : # example: "she/her"  
-  bio              : "game|physics|ai|cat"
-  location         : "Earth"
-  employer         : "Kotoko"
+  bio              : "game|ai|cat"
+  location         : #"Earth"
+  employer         : "[Kotoko](https://www.kotoko.ai/)"
   uri              : # URL
   email            : "none@example.org" 
 
@@ -58,7 +58,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : https://www.linkedin.com/in/yunjiaguo/
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
