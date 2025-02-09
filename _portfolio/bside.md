@@ -2,9 +2,10 @@
 title: "Bside - AI Social Simulation Game"
 excerpt: "A PC game where AI characters live, interact and create stories together<br/><img src='/images/bside-banner.png'>"
 collection: portfolio
+share: false
 ---
 
-# Bside: Your Second Life with AI
+Your Second Life with AI
 
 [Visit Bside Website](https://www.bside.zone/)
 
