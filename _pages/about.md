@@ -1,14 +1,13 @@
 ---
 permalink: /
-title: "Exploring AI in Gaming"
-excerpt: "About me"
+title: "About me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-# Hi🐱
+## Hi🐱
 
 I'm a game developer and AI explorer, focusing on creating meaningful player experiences through AI innovation. Currently leading AI social gaming research at Kotoko AI, where we explore how AI agents can enhance player interactions and social experiences in gaming environments.
 
@@ -35,7 +34,3 @@ What truly drives me is the endless potential for innovation in gaming. From Ove
 
 ## Life & Cats
 Beyond my professional pursuits, I'm deeply committed to cat rescue and welfare, advocating for Trap-Neuter-Return (TNR) and "Adopt Don't Shop". I'm a strong advocate for responsible pet adoption. Together with my family, we've rescued and rehomed numerous cats, with Guagua, Lily, and Spot becoming permanent members of our family.
-
-
-
-[View Projects](/portfolio/) | [Cats](/cats/)
