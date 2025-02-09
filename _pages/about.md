@@ -8,7 +8,8 @@ redirect_from:
 ---
 
 Hi\(@^0^@)/
-I'm a game developer and AI explorer, focusing on creating meaningful player experiences through AI innovation. Currently leading AI social gaming development research at Kotoko AI, where we explore how AI agents can enhance player interactions and social experiences in gaming environments.
+
+I'm a game developer and AI explorer, focusing on creating meaningful player experiences through AI innovation. Currently leading AI social gaming development and research at [Kotoko AI](https://www.kotoko.ai/), where we explore how AI agents can enhance player interactions and social experiences in gaming environments.
 
 ## Focus
 - Player-AI Interaction in Social Gaming
