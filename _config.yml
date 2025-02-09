@@ -8,8 +8,8 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "miao"
-title_separator          : "-"
+title                    : "Yunjia Guo"
+title_separator          : "|"
 name                     : &name "Your Name"
 description              : &description "personal description"
 url                      : https://sherryguo8023.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
@@ -24,11 +24,12 @@ author:
   avatar           : "profile.png"
   name             : "Yunjia Guo"
   pronouns         : # example: "she/her"  
-  bio              : "game|ai|cat"
-  location         : #"Earth"
-  employer         : "[Kotoko](https://www.kotoko.ai/)"
+  bio              : "game | ai | cat"
+  location         : "Earth"
+  employer         : "Kotoko"
+  employer_url     : "https://www.kotoko.ai/"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "yunjia413@gmail.com" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
@@ -58,7 +59,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : https://www.linkedin.com/in/yunjiaguo/
+  linkedin         : yunjiaguo
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
