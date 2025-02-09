@@ -39,3 +39,46 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+
+.grid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2em;
+    margin-bottom: 2em;
+  }
+  
+  .grid__item {
+    text-align: center;
+    background: #fff;
+    width: 300px;  // 固定宽度
+    height: 300px; // 固定高度
+    object-fit: cover; // 保持比例填充
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+    
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1em;
+    }
+    
+    h3 {
+      margin: 0.5em 0;
+      color: #333;
+    }
+    
+    p {
+      font-size: 0.9em;
+      color: #666;
+      margin: 0.5em 0;
+    }
+  }
