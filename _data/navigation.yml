@@ -17,8 +17,8 @@ main:
   - title: "Portfolio"
     url: /portfolio/
 
-  - title: "Cats"
-    url: /cats/       
+  # - title: "Cats"
+  #   url: /cats/       
   # - title: "Blog Posts"
   #   url: /year-archive/
     

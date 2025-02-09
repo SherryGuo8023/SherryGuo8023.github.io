@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About me"
+title: "Homepage"
 author_profile: true
 redirect_from: 
   - /about/
@@ -9,7 +9,7 @@ redirect_from:
 
 ## Hi🐱
 
-I'm a game developer and AI explorer, focusing on creating meaningful player experiences through AI innovation. Currently leading AI social gaming research at Kotoko AI, where we explore how AI agents can enhance player interactions and social experiences in gaming environments.
+I'm a game developer and AI explorer, focusing on creating meaningful player experiences through AI innovation. Currently leading AI social gaming development research at Kotoko AI, where we explore how AI agents can enhance player interactions and social experiences in gaming environments.
 
 ## Focus
 - Player-AI Interaction in Social Gaming
@@ -18,7 +18,7 @@ I'm a game developer and AI explorer, focusing on creating meaningful player exp
 - User Experience in AI-enhanced Gaming
 
 ## Current Work
-At Kotoko AI, I'm pioneering real-time multi-agent LLM systems that enable AI-driven characters to interact naturally in 3D environments. Our research focuses on understanding how AI can serve as social catalysts in gaming spaces, validated through extensive player studies and community engagement.
+AI'm pioneering real-time multi-agent LLM systems that enable AI-driven characters to interact naturally in 3D environments. Our research focuses on understanding how AI can serve as social catalysts in gaming spaces, validated through extensive player studies and community engagement.
 
 ## Background
 I hold an MSc in Game and Media Technology from Utrecht University, where I specialized in procedural content generation and crowd simulation. My journey from physics (BSc, University of Chinese Academy of Sciences) to game technology reflects my passion for combining scientific rigor with creative innovation.
