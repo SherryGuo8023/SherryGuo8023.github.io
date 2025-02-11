@@ -17,6 +17,9 @@ I'm a game developer and AI explorer, focusing on creating meaningful player exp
 - Procedural Content Generation
 - User Experience in AI-enhanced Gaming
 
+## Projects
+I invite you to explore my [portfolio](/portfolio/), which includes innovative projects and AI-driven game developments. Each project demonstrates my journey from physics to AI and gaming technology.
+
 ## Current Work
 I'm pioneering real-time multi-agent LLM systems that enable AI-driven characters to interact naturally in 3D environments. Our research focuses on understanding how AI can serve as social catalysts in gaming spaces, validated through extensive player studies and community engagement.
 
