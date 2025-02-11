@@ -3,7 +3,7 @@ title: "DOBIT - AI Companion Game"
 excerpt: "Mobile & PC AI companion with unique personality and memory<br/><img src='/images/dobit-banner.png'>"
 collection: portfolio
 share: false
-order: 2
+order: 1  # 添加这行，数字越小越靠前
 ---
 
 
@@ -16,10 +16,10 @@ DOBIT is a cross-platform AI companion game that combines generative AI characte
 
 ### Character Generation System
 - Integrated stable diffusion for unique character visual generation
-- Developed style-consistent animation pipeline
+- Spine-powered animation pipeline
 - Created procedural personality generation system
 
-### Advanced LLM Integration
+### LLM Integration
 - Built character-specific dialogue systems with consistent personality traits
 - Implemented long-term memory architecture for relationship development
 - Designed context-aware response generation system
@@ -36,7 +36,7 @@ DOBIT is a cross-platform AI companion game that combines generative AI characte
 - Dynamic character interactions
 - Real-time emotion system
 
-## Media Coverage
+## Media 
 - [YouTube Review 1](https://www.youtube.com/watch?v=8hRC9d4-f5c)
 - [YouTube Review 2](https://www.youtube.com/watch?v=LvezYDDMTI4)
 

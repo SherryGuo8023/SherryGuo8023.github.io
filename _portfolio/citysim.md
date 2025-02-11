@@ -1,6 +1,6 @@
 ---
-title: "Multi-layered City Generation for Crowd Simulation"
-excerpt: "Automated framework for generating multi-layered 3D city environments from OpenStreetMap data<br/><img src='/images/citysim-banner.png'>"
+title: "Multi-layered Generation for Crowd Simulation"
+excerpt: 3D city from OpenStreetMap data<br/><img src='/images/citysim-banner.png'>"
 collection: portfolio
 share: false
 order: 3
@@ -26,7 +26,6 @@ Developed an innovative automated framework for generating multi-layered 3D city
 ### Simulation Environment Integration
 - Seamlessly integrated with SimCrowds engine for large-scale crowd simulation
 - Automated division of walkable spaces and obstacles
-- Optimized navigation mesh generation for pathfinding algorithms
 - Generated Explicit Corridor Map (ECM) for crowd navigation in multi-layered environments
 
 ### Research Impact

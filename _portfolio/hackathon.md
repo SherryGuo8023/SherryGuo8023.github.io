@@ -1,6 +1,6 @@
 ---
 title: "Urban Mobility Hackathon - Crowd Simulation"
-excerpt: "Second Prize - Real-time simulation system for urban planning<br/><img src='/images/hackathon-banner.png'>"
+excerpt: "Real-time simulation system for urban planning<br/><img src='/images/hackathon-banner.png'>"
 collection: portfolio
 share: false
 order: 4
@@ -15,7 +15,6 @@ Developed a predictive tool for city crowd simulation during a 48-hour hackathon
 ## Technical Highlights
 - Developed large-scale crowd simulation (50,000+ agents)
 - Built OpenStreetMap data importer
-- Implemented real-time pathfinding and collision avoidance
 - Successfully simulated crowd flows in Riga and Amsterdam
 
 ## Applications

@@ -35,9 +35,3 @@ Bside is an AI-powered social simulation game where players create and interact 
 - Dynamic Story Generation
 - Community-driven Events
 - Cross-player Character Interactions
-
-## Technologies Used
-- Unity Game Engine
-- Large Language Models
-- Custom Multi-agent Framework
-- Animation System
