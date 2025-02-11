@@ -3,6 +3,7 @@ title: "DOBIT - AI Companion Game"
 excerpt: "Mobile & PC AI companion with unique personality and memory<br/><img src='/images/dobit-banner.png'>"
 collection: portfolio
 share: false
+order: 2
 ---
 
 

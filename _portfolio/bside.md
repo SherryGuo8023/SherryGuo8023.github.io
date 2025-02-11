@@ -3,6 +3,7 @@ title: "Bside - AI Social Simulation Game"
 excerpt: "A PC game where AI characters live, interact and create stories together<br/><img src='/images/bside-banner.png'>"
 collection: portfolio
 share: false
+order: 1  # 添加这行，数字越小越靠前
 ---
 
 Your Second Life with AI

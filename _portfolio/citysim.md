@@ -3,6 +3,7 @@ title: "Multi-layered City Generation for Crowd Simulation"
 excerpt: "Automated framework for generating multi-layered 3D city environments from OpenStreetMap data<br/><img src='/images/citysim-banner.png'>"
 collection: portfolio
 share: false
+order: 3
 ---
 
 ## Overview

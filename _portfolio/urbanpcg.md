@@ -3,6 +3,7 @@ title: "Procedural Urban Generation"
 excerpt: "Large-scale procedural city generation system with WFC algorithm<br/><img src='/images/urbanpcg-banner.png'>"
 collection: portfolio
 share: false
+order: 5
 ---
 
 ## Overview

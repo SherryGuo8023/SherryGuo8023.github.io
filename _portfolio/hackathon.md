@@ -3,6 +3,7 @@ title: "Urban Mobility Hackathon - Crowd Simulation"
 excerpt: "Second Prize - Real-time simulation system for urban planning<br/><img src='/images/hackathon-banner.png'>"
 collection: portfolio
 share: false
+order: 4
 ---
 
 [Urban Mobility Hackathon](https://eventornado.com/event/urbanmobilityhackathon?s=1#home)
