@@ -1,6 +1,6 @@
 ---
 title: "Urban Mobility Hackathon - Crowd Simulation"
-excerpt: "Second Prize (€2,000) - Real-time crowd simulation system for urban planning<br/><img src='/images/hackathon-banner.png'>"
+excerpt: "Second Prize - Real-time simulation system for urban planning<br/><img src='/images/hackathon-banner.png'>"
 collection: portfolio
 share: false
 ---

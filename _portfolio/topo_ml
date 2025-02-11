@@ -1,0 +1,35 @@
+---
+title: "Machine Learning Prediction of Topological Materials"
+excerpt: "Using BERT to predict and classify topological materials - An early application of NLP models in materials science<br/><img src='/images/topo-ml-banner.png'>"
+collection: portfolio
+share: false
+---
+
+## Overview
+Developed an innovative machine learning approach to predict topological properties of materials using BERT language model. This research (2018-2019) was one of the earliest applications of NLP models in materials science, predicting a direction that would later be recognized by 2024 Nobel Prizes in Physics and Chemistry.
+
+## Technical Highlights
+
+### Novel Data Processing Pipeline
+- Transformed materials data into NLP-compatible format using one-hot encoding
+- Converted chemical formulas into vector representations
+- Achieved ~89.5% prediction accuracy on test dataset
+- Processed over 14,000 materials (9,776 non-topological + 5,001 topological)
+
+### BERT-based Classification System
+- Adapted BERT model for materials property prediction
+- Implemented custom tokenization for chemical formulas
+- Developed multi-label binary classification model
+- Utilized transfer learning from pre-trained language models
+
+### Research Impact
+- Early application of NLP models in materials science (2018-2019)
+- Demonstrated feasibility of using language models for scientific prediction
+- Aligned with future Nobel Prize winning directions in AI for science
+- Provided new approach for understanding topological materials classification
+
+## Technologies Used
+- BERT Language Model
+- TensorFlow
+- Python Scientific Stack
+- Materials Databases ([Materiae](https://cmpdc.iphy.ac.cn/materiae/#/))
