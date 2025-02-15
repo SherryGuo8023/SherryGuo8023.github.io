@@ -109,3 +109,21 @@
     grid-template-columns: 1fr;
   }
 }
+
+.archive__item-teaser {
+  position: relative;
+  
+  a {
+    display: block;
+    
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
