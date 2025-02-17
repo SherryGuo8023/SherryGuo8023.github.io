@@ -1,6 +1,6 @@
 ---
 title: "Anime Giffy - Discord GIF Generator"
-excerpt: "Create cute chibi character GIFs from text descriptions<br/><img src='/images/giffy-banner.png'>"
+excerpt: "Create cute chibi character GIFs from text descriptions<br/><img src='/images/giffy-4.png'>"
 collection: portfolio
 share: false
 order: 3
