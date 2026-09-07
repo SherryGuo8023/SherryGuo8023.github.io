@@ -29,7 +29,8 @@ author:
   employer         : "Kotoko AI"
   employer_url     : "https://www.kotoko.ai/"
   uri              : # URL
-  email            : "yunjia413@gmail.com" 
+  email            : # intentionally blank; contact goes through /contact/
+  contact          : "/contact/"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile

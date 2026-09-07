@@ -1,11 +1,13 @@
 ---
 title: "DOBIT - AI Companion Game"
-excerpt: "Mobile & PC AI companion with unique personality and memory<br/><img src='/images/dobit-banner.png'>"
+excerpt: "Mobile & PC AI companion with unique personality and memory<br/><img src='/images/dobit-screenshot.jpg'>"
 collection: portfolio
 share: false
 order: 2  # 添加这行，数字越小越靠前
 ---
 
+
+![Dobit: a companion walking through the town in the evening, with its daily log and next plan](/images/dobit-screenshot.jpg)
 
 [Visit DOBIT Website](https://www.dobit.link/)
 

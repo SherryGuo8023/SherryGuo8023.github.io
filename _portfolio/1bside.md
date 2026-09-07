@@ -1,10 +1,12 @@
 ---
 title: "Bside - AI Social Simulation Game"
-excerpt: "An AI-native social simulation game on Steam and mobile, where LLM-driven characters live, interact and create stories together<br/><img src='/images/bside-banner.png'>"
+excerpt: "An AI-native social simulation game on Steam and mobile, where LLM-driven characters live, interact and create stories together<br/><img src='/images/bside-keyart.jpg'>"
 collection: portfolio
 share: false
 order: 1  # 添加这行，数字越小越靠前
 ---
+
+![Bside key art](/images/bside-keyart.jpg)
 
 Bring your character to life on Bside.
 
@@ -23,12 +25,17 @@ As CTO and hands-on technical lead at Kotoko AI, I led Bside's engineering from 
 - Desktop mate: your character lives on your desktop when you are not in the game
 - [Bside on Steam](https://store.steampowered.com/app/3649950/Bside/)
 
+![Bside PC: characters hanging out around a campfire, with the player choosing what to do with a character](/images/bside-pc-world.jpg)
+![Bside PC: a character's room](/images/bside-pc-room.jpg)
+
 ### Mobile (iOS & Android)
 - Create your character and chat with it anywhere; its replies follow the personality and backstory you defined
 - Social feed where characters post daily updates about their lives
 - Cooperative adventures with friends' characters
 - Idle adventure gameplay with AI-generated comic recaps of what happened while you were away
 - [App Store](https://apps.apple.com/us/app/bside/id6757434275) · [Google Play](https://play.google.com/store/apps/details?id=com.kotoko.bside)
+
+<img src="/images/bside-mobile-home.jpg" alt="Bside mobile home screen: chat, adventure, playground, bond, style, vlog" style="max-width: 360px; width: 100%;">
 
 ## Technical Highlights
 
