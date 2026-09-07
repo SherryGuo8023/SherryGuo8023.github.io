@@ -11,7 +11,7 @@ Leave me a message here. It goes straight to my inbox. An email address is optio
 </div>
 
 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" style="max-width: 40em;">
-  <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+  <input type="hidden" name="access_key" value="9f416cc0-9fbb-496c-b33e-6d7fe7a76b90">
   <input type="hidden" name="subject" value="New message from sherryguo8023.github.io">
   <input type="hidden" name="from_name" value="Personal website">
   <input type="hidden" name="redirect" value="https://sherryguo8023.github.io/contact/?sent=1">
