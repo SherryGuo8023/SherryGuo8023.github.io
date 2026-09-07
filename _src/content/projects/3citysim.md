@@ -10,7 +10,7 @@ hero: citysim-banner.png
 links: []
 ---
 
-An automated framework that generates multi-layered 3D city environments from OpenStreetMap data, built for large-scale crowd simulation. Most reconstruction pipelines flatten a city; this one keeps bridges and tunnels as separate walkable layers and connects them, so a crowd simulator gets an environment it can actually navigate.
+Most city reconstruction pipelines flatten everything. This one keeps bridges and tunnels as separate walkable layers and connects them properly, so a crowd simulator gets an environment it can actually navigate.
 
 ## What it does
 

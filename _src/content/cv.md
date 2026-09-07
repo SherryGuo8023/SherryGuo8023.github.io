@@ -2,7 +2,7 @@
 title: CV
 ---
 
-I build AI character systems for games. Currently at Kotoko AI, where I've shipped Bside, Bside: Desktop Mate, and Dobit. Physics background, for what it's worth.
+I build AI character systems for games. Currently at Kotoko AI, where I've shipped Bside, Bside: Desktop Mate, and Dobit. Four years of university physics — turns out that's just the AI industry's favourite backstory.
 
 ## Experience
 

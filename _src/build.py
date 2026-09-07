@@ -30,7 +30,7 @@ NAV = [
     ("Contact", "/contact/"),
 ]
 
-DESCRIPTION = "Yunjia Guo — I make AI characters that live inside games."
+DESCRIPTION = "Sherry Guo — game developer, cat rescuer, physics-to-AI pipeline survivor."
 
 
 def esc(s):
@@ -60,7 +60,7 @@ def page(base, *, title, body, current=None, description=""):
     for label, href in NAV:
         cur = ' aria-current="page"' if href == current else ""
         nav.append(f'<li><a href="{base}{href}"{cur}>{label}</a></li>')
-    full_title = "Yunjia Guo" if title is None else f"{title} – Yunjia Guo"
+    full_title = 'Yunjia "Sherry" Guo' if title is None else f'{title} – Yunjia "Sherry" Guo'
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -76,14 +76,14 @@ def page(base, *, title, body, current=None, description=""):
 </head>
 <body>
 <header class="wrap top">
-  <a class="top__name" href="{base}/">Yunjia Guo</a>
+  <a class="top__name" href="{base}/">Sherry Guo</a>
   <nav aria-label="Main"><ul class="top__nav">{''.join(nav)}</ul></nav>
 </header>
 <main class="wrap">
 {body}
 </main>
 <footer class="wrap foot">
-  <span>Yunjia Guo, 2026</span>
+  <span>Sherry Guo, 2026</span>
 </footer>
 <script>
 if (matchMedia('(prefers-reduced-motion: reduce)').matches) {{
@@ -211,8 +211,8 @@ def build_home(base, projects, pubs, talks):
     body = f"""
 <section class="hero">
   <div>
-    <h1 class="hero__title">I make AI characters that live inside games.</h1>
-    <p class="hero__lede">They post about their day, wander into trouble, and sometimes listen when you tell them not to. I build the systems that keep them alive at <a href="https://www.kotoko.ai/">Kotoko AI</a>, and write about it when something interesting happens.</p>
+    <h1 class="hero__title">Hi, I'm Sherry.</h1>
+    <p class="hero__lede">I make games where the characters decide what to do on their own. Studied physics, ended up in AI — apparently that's a pipeline now. The rest of my time goes to <a href="/cats/">street cats</a> and StarCraft.</p>
     <ul class="hero__links">
       <li><a href="{base}/portfolio/">Projects</a></li>
       <li><a href="{base}/publications/">Papers</a></li>
@@ -220,7 +220,7 @@ def build_home(base, projects, pubs, talks):
     </ul>
   </div>
   <figure class="snap">
-    <img src="/images/me.jpg" alt="Yunjia Guo" width="1536" height="1152">
+    <img src="/images/me.jpg" alt="Sherry Guo" width="1536" height="1152">
   </figure>
 </section>
 

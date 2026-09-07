@@ -2,7 +2,7 @@
 slug: bside
 order: 1
 title: Bside
-tagline: A character-raising game for iOS and Android, built around AI-native play.
+tagline: Create a character, raise it, watch it develop a life of its own. iOS and Android.
 years: 2025 – now
 role: Technical lead, Kotoko AI
 thumb: bside-mobile-home.jpg
@@ -14,7 +14,7 @@ links:
   - ["bside.zone", "https://www.bside.zone/"]
 ---
 
-Bside launched on iOS and Android in March 2026 and is the product I currently spend most of my time on. Its core is not chat. It is: create a character, then raise it. There are no preset characters and no NPCs. You build yours from personality tags and free text, and that personality drives how it acts, what it posts and how it plays.
+Bside is the game I spend most of my time on. The point is not chatting with an AI. You create a character, raise it, and it starts living on its own. No presets, no NPCs. You shape its personality from scratch, and that personality drives everything it does.
 
 ## What the character does
 
@@ -26,6 +26,6 @@ Bside launched on iOS and Android in March 2026 and is the product I currently s
 
 ## Built for the phone
 
-Sessions on a phone are short and frequent, latency budgets are tight, and every interaction has to pay for itself. So Bside is built around mobile-native loops: lightweight nurturing, asynchronous presence through the feed, and generative image and video content, which only became affordable enough for a core loop in the last couple of years.
+Phone sessions are short, so everything in Bside earns its place quickly: lightweight nurturing, an async feed that keeps the character alive between sessions, and generative image and video that only became cheap enough to use as a core loop in the last couple of years.
 
-Bside shares its art style and character creator with [Bside: Desktop Mate]({{base}}/portfolio/1bside/) on Steam, and characters made in one can be used in the other, but they are different games built for different platforms: the PC game runs a real-time multi-agent simulation suited to long sessions; Bside on mobile is built for daily play.
+Bside shares its art style and character creator with [Bside: Desktop Mate]({{base}}/portfolio/1bside/) on Steam, and characters cross between them, but they are genuinely different games. The PC version runs a real-time multi-agent world for long sessions; this one is built for daily play.

@@ -11,7 +11,7 @@ links:
   - ["Add to Discord", "https://discord.com/oauth2/authorize?client_id=1331933538240565329"]
 ---
 
-Anime Giffy is an original-character GIF generator for all things cute and chibi. Describe your character, pick a pose or gesture, and get a GIF you can use as a sticker or reaction in Discord. Type `/create` to start.
+A Discord bot that turns a text description into a chibi character GIF. Describe what you want, pick a pose, and use it as a sticker or reaction. Type `/create` to start.
 
 ## How it works
 

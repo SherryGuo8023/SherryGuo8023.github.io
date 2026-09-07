@@ -2,7 +2,7 @@
 slug: 1bside
 order: 2
 title: "Bside: Desktop Mate"
-tagline: A multiplayer social world on Steam. Every character belongs to a player and is run by AI.
+tagline: A multiplayer world on Steam where every character belongs to a real player. No joysticks.
 years: 2024 – 2025
 role: Technical lead, Kotoko AI
 thumb: bside-keyart.jpg
@@ -14,9 +14,9 @@ links:
 
 <video class="clip" controls playsinline preload="metadata" poster="/video/bside-desktop-mate-poster.jpg" src="/video/bside-desktop-mate.mp4"></video>
 
-Bside: Desktop Mate is a social simulation game released on Steam in Early Access in October 2025. There are no NPCs. Every character in the world, called a Biibit, belongs to a real player, but the player does not control it directly: a multi-agent runtime built on large language models decides what each Biibit does, who it talks to and how it reacts. Players shape their character through its personality and backstory, watch it live alongside other players' characters in shared rooms, and nudge it with a whisper when they want to.
+There are no NPCs. Every character in the world belongs to a real player, but you never control yours directly. A multi-agent system decides what your Biibit does, who it talks to, and how it reacts. You shape it through personality and backstory, watch it live alongside other players' characters, and whisper when you want to nudge it somewhere.
 
-The game also runs as a desktop mate: your Biibit lives on your desktop while you work, and steps back into the world when you open the game.
+It also works as a desktop mate: your Biibit hangs out on your screen while you work, and steps back into the world when you open the game.
 
 ## What players do
 
@@ -32,14 +32,14 @@ The game also runs as a desktop mate: your Biibit lives on your desktop while yo
 
 ## Under the hood
 
-This is the version the three-layer architecture in our research refers to.
+This is the version our research papers describe.
 
-**Behaviours as bundles.** Characters run behaviour bundles with priority, mutual-exclusion and interruption rules, similar in spirit to an ability system in an action game. The model proposes what a character wants to do next; the runtime decides whether that can interrupt what it is doing, and whether the interrupted behaviour resumes or is dropped.
+**Behaviour bundles.** Characters run prioritised behaviour bundles with interruption rules, like an ability system in an action game. The model proposes what a character wants to do; the runtime decides whether it can interrupt what's already happening.
 
-**Turn-by-turn conversation.** Conversations unfold one line at a time, and each participant decides for itself whether to reply, decline, leave or go back to what it was doing. A bounded conversational decay winds exchanges down so two characters do not talk forever.
+**Turn-by-turn conversation.** Each line is its own decision. A character can reply, decline, walk away, or go back to what it was doing. A decay function winds exchanges down so nobody talks forever.
 
-**A bounded action pool.** Characters do not emit engine commands. The runtime selects from hand-authored, executable actions, with fallbacks, and the model voices the choice in character. Open language, but only actions the game can actually execute and read back.
+**Bounded actions.** Characters never emit raw engine commands. The runtime picks from hand-authored, executable actions with fallbacks; the model voices the choice in character.
 
-**Whisper.** The player-steering interface: a suggestion the character will usually follow, never a command with a guaranteed effect.
+**Whisper.** A suggestion the character will usually follow. Never a command with a guaranteed effect.
 
-The control framework is written up in [Bounded Autonomy: Controlling LLM Characters in Live Multiplayer Games](https://arxiv.org/abs/2604.04703). [Bside]({{base}}/portfolio/bside/) on iOS and Android and Bside: Desktop Mate are platform-specific designs rather than versions of one game: Bside on mobile is built around daily play; the PC game carries the real-time multi-agent simulation suited to long sessions.
+The framework is written up in [Bounded Autonomy](https://arxiv.org/abs/2604.04703). [Bside]({{base}}/portfolio/bside/) on mobile and Desktop Mate are different games for different platforms, not ports of each other.

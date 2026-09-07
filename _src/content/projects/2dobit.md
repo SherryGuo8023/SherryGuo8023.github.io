@@ -2,7 +2,7 @@
 slug: 2dobit
 order: 3
 title: Dobit
-tagline: A multiplayer life simulation on mobile where players' AI characters and NPCs live together in a small town.
+tagline: A small town where AI characters lived together. The game that taught us everything we got wrong.
 years: 2023 – 2024
 role: Technical lead, Kotoko AI
 thumb: dobit-screenshot.jpg
@@ -12,22 +12,22 @@ links:
   - ["Another review", "https://www.youtube.com/watch?v=LvezYDDMTI4"]
 ---
 
-Dobit was the first product I led at Kotoko AI, before Bside and Bside: Desktop Mate: a multiplayer life simulation for iOS and Android, run as a closed beta in 2023 and 2024. Each player created a Dobit, their own AI character, which then lived in the town of Mystereal alongside other players' Dobits and a cast of named NPCs. Players did not steer their character with a joystick. They told it what they hoped it would do, and it usually did, but not always.
+Dobit was where everything started. A multiplayer life sim for mobile, closed beta in 2023–2024. You created a character, it moved into the town of Mystereal, and it lived there alongside other players' characters and a cast of NPCs. You didn't control it with a joystick. You told it what you hoped it would do, and it usually did. Usually.
 
 ## How it worked
 
-**One system for every character.** A multi-agent system drove players' Dobits and the NPCs alike: planning the day, moving around town, working, talking and remembering. Several specialised language models were combined to balance cost and quality.
+**One system for every character.** The same multi-agent system drove players' Dobits and NPCs alike: planning, moving, talking, remembering.
 
-**Memory as a graph.** Each Dobit kept short-term and long-term memory in a graph store, including its relationships with other Dobits and with places in town. The agents read that memory when they planned and talked.
+**Memory as a graph.** Each Dobit kept short- and long-term memory in a graph store, tracking relationships with other characters and places. The agents read that memory when they planned and talked.
 
-**Daily letters.** Every day your Dobit wrote you a letter about what it had done. Beta players told us the letters were the moment the character felt alive.
+**Daily letters.** Every day your Dobit wrote you a letter about what it had been up to. Beta players told us that was the moment the character felt real.
 
-**Character generation.** One sentence of description became a game-ready character: artist-drawn parts and outfits were combined, rigged and animated automatically.
+**Character generation.** One sentence of description turned into a game-ready character: artist-drawn parts combined, rigged and animated automatically.
 
-**Staged conversations.** When one character decided to talk to another, a single model call wrote the whole exchange and the participants acted it out face to face. Coherent little scenes, and the reason the next product changed how conversation works.
+**Staged conversations.** When one character wanted to talk to another, a single model call wrote the whole exchange and they acted it out face to face. Coherent little scenes, and the reason the next product overhauled how conversation works.
 
 ## What it taught us
 
-Open-ended generation produced signs of life: rumours that spread through the whole town, a shopkeeper who could think of nothing but her cats. It also showed that characters need rules the model cannot give itself, about interruption, about ending a conversation, about which actions the game can actually execute. Those lessons became the runtime in [Bside: Desktop Mate]({{base}}/portfolio/1bside/), and the road from one to the other is the subject of a case study accepted at AIIDE 2026. See [Papers]({{base}}/publications/).
+Open-ended generation gave us signs of life we didn't expect: rumours that spread through the whole town, a shopkeeper who could think of nothing but her cats. It also showed us everything characters can't figure out on their own — when to stop talking, what actions the game can actually execute, how to interrupt gracefully. Those lessons became the runtime in [Bside: Desktop Mate]({{base}}/portfolio/1bside/), and the journey is written up in a case study accepted at AIIDE 2026. See [Papers]({{base}}/publications/).
 
-Built with Unity, Stable Diffusion and a custom LLM integration layer.
+Built with Unity, Stable Diffusion, and a custom LLM integration layer.
