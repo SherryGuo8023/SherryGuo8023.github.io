@@ -13,7 +13,7 @@ Game developer and AI researcher with a background in physics. Technical lead at
 **Tencent Games (TiMi Studios)**, Game Developer, 2022 – 2023
 
 - Character, control, camera and ability framework systems in Unreal Engine 4; Unity work on other titles
-- Credits: Metal Slug: Awakening; Honor of Kings: Breaking Dawn (cancelled before release); an unannounced AAA anime-style open-world action shooter
+- Credits: Metal Slug: Awakening; Honor of Kings: Breaking Dawn (cancelled before release); an unannounced AAA anime-style open-world action shooter (cancelled before announcement)
 
 **NetEase Games**, Game Engine Developer, 2020 – 2021
 
