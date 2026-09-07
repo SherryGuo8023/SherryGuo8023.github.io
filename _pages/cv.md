@@ -13,26 +13,26 @@ Technical leader with a background in physics and game technology, specialising 
 
 Professional Experience
 ======
-* **Kotoko AI**, Shanghai, China. Chief Technology Officer, Nov 2023 - present
+* **Kotoko AI**. Chief Technology Officer, Nov 2023 - present
   * Led end-to-end development of Bside, an AI social simulation game, architecting the core game systems and multi-agent framework from the ground up
   * Designed and implemented the AI architecture integrating LLM-based multi-agent systems with a social simulation engine, across three generations of client, server and character systems
   * Established the technical infrastructure and development pipeline supporting rapid iteration of game features and AI capabilities
   * Built and mentored a cross-functional engineering team
 
-* **Tencent Games (TiMi Studios)**, Shanghai, China. Game Developer, Feb 2022 - Oct 2023
+* **Tencent Games (TiMi Studios)**. Game Developer, Feb 2022 - Oct 2023
   * Architected and implemented core combat systems for an AAA open-world action game in Unreal Engine 4, including the skill editor framework and combat mechanics
   * Developed the character controller (3C: character, control, camera) integrating locomotion, animation state machines and combat feedback
   * Delivered gameplay features across multiple titles and tech stacks (Unreal, Unity)
 
-* **NetEase Games**, Shanghai, China. Game Engine Developer, Sep 2021 - Nov 2021
+* **NetEase Games**. Game Engine Developer, Sep 2021 - Nov 2021
   * Implemented stylised rendering solutions for an online multiplayer demo
 
-* **NetEase Games**, Hangzhou, China. Game Engine Developer, Jul 2020 - Oct 2020
+* **NetEase Games**. Game Engine Developer, Jul 2020 - Oct 2020
   * Developed a procedural urban generation pipeline in Houdini, integrating multi-level road network optimisation and Wave Function Collapse for building placement
 
 Research Experience
 ======
-* **Max Planck Institute for Solid State Research**, Stuttgart, Germany. Summer Guest Researcher, Jul 2018 - Aug 2018
+* **Max Planck Institute for Solid State Research**, Germany. Summer Guest Researcher, Jul 2018 - Aug 2018
   * High-temperature superconductor characterisation
 
 * **Institute of Physics & Beijing National Laboratory for Condensed Matter Physics, Chinese Academy of Sciences**. Research Assistant, Jun 2017 - Jun 2018

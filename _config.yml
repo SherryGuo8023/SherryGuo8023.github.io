@@ -24,9 +24,9 @@ author:
   avatar           : "profile.png"
   name             : "Yunjia Guo"
   pronouns         : # example: "she/her"  
-  bio              : "CTO @ Kotoko AI · game | ai | cat"
-  location         : "Shanghai, China"
-  employer         : "Kotoko AI"
+  bio              : "game | ai | cat"
+  location         : # intentionally blank
+  employer         : "Kotoko"
   employer_url     : "https://www.kotoko.ai/"
   uri              : # URL
   email            : # intentionally blank; contact goes through /contact/
