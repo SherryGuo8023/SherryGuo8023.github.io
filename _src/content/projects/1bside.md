@@ -1,6 +1,6 @@
 ---
 slug: 1bside
-order: 1
+order: 2
 title: "Bside: Desktop Mate"
 tagline: A multiplayer social world on Steam. Every character belongs to a player and is run by AI.
 years: 2024 – 2025
@@ -32,7 +32,7 @@ The game also runs as a desktop mate: your Biibit lives on your desktop while yo
 
 ## Under the hood
 
-This is the version the three-layer architecture in our research refers to, and the hardest engineering of the three products I have led at Kotoko AI.
+This is the version the three-layer architecture in our research refers to.
 
 **Behaviours as bundles.** Characters run behaviour bundles with priority, mutual-exclusion and interruption rules, similar in spirit to an ability system in an action game. The model proposes what a character wants to do next; the runtime decides whether that can interrupt what it is doing, and whether the interrupted behaviour resumes or is dropped.
 
@@ -42,4 +42,4 @@ This is the version the three-layer architecture in our research refers to, and 
 
 **Whisper.** The player-steering interface: a suggestion the character will usually follow, never a command with a guaranteed effect.
 
-The control framework is written up in [Bounded Autonomy: Controlling LLM Characters in Live Multiplayer Games](https://arxiv.org/abs/2604.04703). Bside: Desktop Mate and [Bside Mobile]({{base}}/portfolio/bside-mobile/) are platform-specific designs rather than versions of one game: PC carries the real-time multi-agent simulation suited to long sessions; mobile is built around lighter daily loops.
+The control framework is written up in [Bounded Autonomy: Controlling LLM Characters in Live Multiplayer Games](https://arxiv.org/abs/2604.04703). [Bside]({{base}}/portfolio/bside/) on iOS and Android and Bside: Desktop Mate are platform-specific designs rather than versions of one game: Bside on mobile is built around daily play; the PC game carries the real-time multi-agent simulation suited to long sessions.

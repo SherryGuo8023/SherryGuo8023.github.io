@@ -40,12 +40,12 @@
 <p><img alt="Characters around a campfire in a shared Space, with the player choosing what to suggest to their character" src="/images/bside-pc-world.jpg" /></p>
 <p><img alt="A Biibit's room" src="/images/bside-pc-room.jpg" /></p>
 <h2>Under the hood</h2>
-<p>This is the version the three-layer architecture in our research refers to, and the hardest engineering of the three products I have led at Kotoko AI.</p>
+<p>This is the version the three-layer architecture in our research refers to.</p>
 <p><strong>Behaviours as bundles.</strong> Characters run behaviour bundles with priority, mutual-exclusion and interruption rules, similar in spirit to an ability system in an action game. The model proposes what a character wants to do next; the runtime decides whether that can interrupt what it is doing, and whether the interrupted behaviour resumes or is dropped.</p>
 <p><strong>Turn-by-turn conversation.</strong> Conversations unfold one line at a time, and each participant decides for itself whether to reply, decline, leave or go back to what it was doing. A bounded conversational decay winds exchanges down so two characters do not talk forever.</p>
 <p><strong>A bounded action pool.</strong> Characters do not emit engine commands. The runtime selects from hand-authored, executable actions, with fallbacks, and the model voices the choice in character. Open language, but only actions the game can actually execute and read back.</p>
 <p><strong>Whisper.</strong> The player-steering interface: a suggestion the character will usually follow, never a command with a guaranteed effect.</p>
-<p>The control framework is written up in <a href="https://arxiv.org/abs/2604.04703">Bounded Autonomy: Controlling LLM Characters in Live Multiplayer Games</a>. Bside: Desktop Mate and <a href="/new/portfolio/bside-mobile/">Bside Mobile</a> are platform-specific designs rather than versions of one game: PC carries the real-time multi-agent simulation suited to long sessions; mobile is built around lighter daily loops.</p>
+<p>The control framework is written up in <a href="https://arxiv.org/abs/2604.04703">Bounded Autonomy: Controlling LLM Characters in Live Multiplayer Games</a>. <a href="/new/portfolio/bside/">Bside</a> on iOS and Android and Bside: Desktop Mate are platform-specific designs rather than versions of one game: Bside on mobile is built around daily play; the PC game carries the real-time multi-agent simulation suited to long sessions.</p>
 <hr>
 <p><a href="/new/portfolio/">All projects</a></p>
 </div>

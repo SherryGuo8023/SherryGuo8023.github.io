@@ -12,7 +12,7 @@ links:
   - ["Another review", "https://www.youtube.com/watch?v=LvezYDDMTI4"]
 ---
 
-Dobit was the first of the three products I have led at Kotoko AI: a multiplayer life simulation for iOS and Android, run as a closed beta in 2023 and 2024. Each player created a Dobit, their own AI character, which then lived in the town of Mystereal alongside other players' Dobits and a cast of named NPCs. Players did not steer their character with a joystick. They told it what they hoped it would do, and it usually did, but not always.
+Dobit was the first product I led at Kotoko AI, before Bside and Bside: Desktop Mate: a multiplayer life simulation for iOS and Android, run as a closed beta in 2023 and 2024. Each player created a Dobit, their own AI character, which then lived in the town of Mystereal alongside other players' Dobits and a cast of named NPCs. Players did not steer their character with a joystick. They told it what they hoped it would do, and it usually did, but not always.
 
 ## How it worked
 

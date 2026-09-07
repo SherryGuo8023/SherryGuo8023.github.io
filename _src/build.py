@@ -30,7 +30,7 @@ NAV = [
     ("Contact", "/contact/"),
 ]
 
-DESCRIPTION = "Yunjia Guo: game developer and AI researcher. Technical lead at Kotoko AI."
+DESCRIPTION = "Yunjia Guo: game developer and AI researcher. Technical lead at Kotoko AI for Bside."
 
 
 def esc(s):
@@ -190,9 +190,9 @@ if (new URLSearchParams(location.search).get('sent') === '1') {{
 # ---------------------------------------------------------------- pages
 
 def build_home(base, projects, pubs, talks):
+    mobile = next(p for p in projects if p["slug"] == "bside")
     pc = next(p for p in projects if p["slug"] == "1bside")
-    mobile = next(p for p in projects if p["slug"] == "bside-mobile")
-    rest = [p for p in projects if p["slug"] not in ("1bside", "bside-mobile")]
+    rest = [p for p in projects if p["slug"] not in ("bside", "1bside")]
 
     def duo(p, img, links, text, video=None):
         ls = "".join(f'<li><a href="{esc(u)}">{esc(l)}</a></li>' for l, u in links)
@@ -212,7 +212,7 @@ def build_home(base, projects, pubs, talks):
 <section class="hero">
   <div>
     <h1 class="hero__title">Game developer and AI researcher.</h1>
-    <p class="hero__lede">I lead engineering at <a href="https://www.kotoko.ai/">Kotoko AI</a>, where we make games built around AI characters: Bside: Desktop Mate on Steam, and Bside Mobile on iOS and Android. Before that I worked on combat systems at Tencent and procedural cities at NetEase, and studied physics.</p>
+    <p class="hero__lede">I lead engineering at <a href="https://www.kotoko.ai/">Kotoko AI</a>, where we make games built around AI characters: Bside on iOS and Android, and Bside: Desktop Mate on Steam. Before that I worked on combat systems at Tencent and procedural cities at NetEase, and studied physics.</p>
     <ul class="hero__links">
       <li><a href="{base}/portfolio/">Projects</a></li>
       <li><a href="{base}/publications/">Papers</a></li>
@@ -227,14 +227,14 @@ def build_home(base, projects, pubs, talks):
 <section class="section" id="bside">
   <div class="section__head">
     <h2>Bside</h2>
-    <p>Two games under one name, built for different platforms. Characters and the character creator are shared; the games are not.</p>
+    <p>Bside on iOS and Android, and Bside: Desktop Mate on Steam. Two games built for different platforms; characters and the character creator are shared, the games are not.</p>
   </div>
   <div class="duo">
+    {duo(mobile, 'bside-mobile-home.jpg', [("App Store", "https://apps.apple.com/us/app/bside/id6757434275"), ("Google Play", "https://play.google.com/store/apps/details?id=com.kotoko.bside")],
+         "Create a character, then raise it. It posts about its day, goes on adventures on its own, appears in your own videos, and talks when you want it to. On iOS and Android since March 2026.")}
     {duo(pc, 'bside-keyart.jpg', [("Steam", "https://store.steampowered.com/app/3649950/Bside/")],
          "A multiplayer social world with no NPCs. Every character belongs to a player and is run by a multi-agent LLM runtime; players steer with a whisper rather than a joystick. Steam Early Access since October 2025.",
          video="/video/bside-desktop-mate.mp4")}
-    {duo(mobile, 'bside-mobile-home.jpg', [("App Store", "https://apps.apple.com/us/app/bside/id6757434275"), ("Google Play", "https://play.google.com/store/apps/details?id=com.kotoko.bside")],
-         "Create a character, then raise it. It posts about its day, goes on adventures on its own, appears in your own videos, and talks when you want it to. On iOS and Android since March 2026.")}
   </div>
 </section>
 
@@ -266,11 +266,11 @@ def build_home(base, projects, pubs, talks):
     <h2>Background</h2>
   </div>
   <ul class="road">
-    <li><time>2023 – now</time><p><b>Kotoko AI.</b> Technical lead for Dobit, Bside: Desktop Mate and Bside Mobile, and the LLM character systems underneath them.</p></li>
+    <li><time>2023 – now</time><p><b>Kotoko AI.</b> Technical lead for Bside, Bside: Desktop Mate and Dobit, and the LLM character systems underneath them.</p></li>
     <li><time>2022 – 2023</time><p><b>Tencent Games, TiMi Studios.</b> Character, control, camera and ability framework systems in Unreal Engine 4 for an AAA open-world action game; Unity work on other titles. Credits: Metal Slug: Awakening; Honor of Kings: Breaking Dawn (cancelled before release); an unannounced AAA anime-style open-world action shooter.</p></li>
     <li><time>2020 – 2021</time><p><b>NetEase Games.</b> Procedural urban generation in Houdini; stylised rendering for an online multiplayer demo. Credits: Once Human.</p></li>
-    <li><time>2019 – 2021</time><p><b>Utrecht University</b>, MSc Game and Media Technology. Procedural content generation and crowd simulation.</p></li>
-    <li><time>2015 – 2019</time><p><b>University of Chinese Academy of Sciences</b>, BSc Physics, minor in mathematics. Superconductor research at the Institute of Physics, a summer at the Max Planck Institute for Solid State Research, and a thesis on machine learning for topological materials.</p></li>
+    <li><time>2019 – 2021</time><p><b>Utrecht University</b>, MSc Game and Media Technology.</p></li>
+    <li><time>2015 – 2019</time><p><b>University of Chinese Academy of Sciences</b>, BSc Physics.</p></li>
   </ul>
   <p style="margin-top:1.2rem"><a href="{base}/cv/">Full CV</a>. Finalist, Innovator Award, Women in Tech Awards 2026.</p>
 </section>

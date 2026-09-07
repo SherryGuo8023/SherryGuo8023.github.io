@@ -26,9 +26,10 @@
   status: "accepted, to appear"
   url: ""
   summary: >
-    A case study of three products: Dobit, a multiplayer life simulation with an open-ended
-    multi-agent town; Bside: Desktop Mate, where every character is player-owned and run by a bounded
-    multi-agent runtime; and Bside Mobile, a character-raising game built around AI-native play.
+    A case study of three products: Bside on mobile, a character-raising game built around
+    AI-native play; Bside: Desktop Mate, where every character is player-owned and run by a
+    bounded multi-agent runtime; and Dobit before them, a multiplayer life simulation with an
+    open-ended multi-agent town.
     What it took to turn open-ended model output into actions a game can execute, and how each
     step tracked what language models had become capable of and affordable enough to do.
     Presentation scheduled for November 2026; the paper will be linked once published.
