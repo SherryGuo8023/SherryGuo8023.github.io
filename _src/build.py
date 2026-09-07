@@ -1,7 +1,7 @@
 """Build the static site.
 
-    python _src/build.py                 # writes to the repo root (live site)
-    python _src/build.py --out new --base /new   # preview build under /new/
+    python _src/build.py                          # writes to the repo root (live site)
+    python _src/build.py --out new --base /new    # preview build under /new/
 
 Content lives in _src/content. Images live in /images at the site root.
 Requires: pip install markdown pyyaml
@@ -27,8 +27,10 @@ NAV = [
     ("Papers", "/publications/"),
     ("CV", "/cv/"),
     ("Cats", "/cats/"),
-    ("Say hi", "/contact/"),
+    ("Contact", "/contact/"),
 ]
+
+DESCRIPTION = "Yunjia Guo: game developer and AI researcher. Technical lead at Kotoko AI."
 
 
 def esc(s):
@@ -59,18 +61,17 @@ def page(base, *, title, body, current=None, description=""):
         cur = ' aria-current="page"' if href == current else ""
         nav.append(f'<li><a href="{base}{href}"{cur}>{label}</a></li>')
     full_title = "Yunjia Guo" if title is None else f"{title} – Yunjia Guo"
-    desc = esc(description or "Yunjia (Sherry) Guo: game developer and AI researcher building games where the characters think for themselves.")
     return f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(full_title)}</title>
-<meta name="description" content="{desc}">
+<meta name="description" content="{esc(description or DESCRIPTION)}">
 <link rel="icon" href="/images/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap">
 <link rel="stylesheet" href="{base}/style.css">
 </head>
 <body>
@@ -83,7 +84,6 @@ def page(base, *, title, body, current=None, description=""):
 </main>
 <footer class="wrap foot">
   <span>Yunjia Guo, 2026</span>
-  <span>No template, no tracking, no cookies.</span>
 </footer>
 </body>
 </html>
@@ -114,30 +114,20 @@ def load_pubs():
     return yaml.safe_load(read(os.path.join(CONTENT, "publications.yml")))
 
 
-def authors_html(names):
-    out = []
-    for n in names:
-        out.append(f"<b>{esc(n)}</b>" if n == "Yunjia Guo" else esc(n))
-    return ", ".join(out)
-
-
-def paper_html(p, base, with_summary):
+def paper_html(p, with_summary):
     title = esc(p["title"])
     if p.get("url"):
         title = f'<a href="{esc(p["url"])}">{title}</a>'
-    venue = esc(p["venue"])
-    status = esc(p["status"])
     summary = f'<p class="paper__summary">{esc(p["summary"].strip())}</p>' if with_summary else ""
     return f"""<li class="paper" id="{esc(p['id'])}">
   <h3 class="paper__title">{title}</h3>
-  <p class="paper__authors">{authors_html(p['authors'])}</p>
-  <p class="paper__venue">{venue}. {status.capitalize()}, {p['year']}.</p>
+  <p class="paper__venue">{esc(p['role'])}. {esc(p['venue'])}. {esc(p['status']).capitalize()}, {p['year']}.</p>
   {summary}
 </li>"""
 
 
-def papers_list(pubs, base, with_summary=False):
-    return '<ul class="papers">' + "".join(paper_html(p, base, with_summary) for p in pubs) + "</ul>"
+def papers_list(pubs, with_summary=False):
+    return '<ul class="papers">' + "".join(paper_html(p, with_summary) for p in pubs) + "</ul>"
 
 
 def project_row(p, base):
@@ -153,20 +143,20 @@ def project_row(p, base):
 
 def contact_form(base):
     redirect = f"{SITE_URL}{base}/contact/?sent=1"
-    return f"""<div id="sent" class="sent" hidden>Thanks, your message is on its way.</div>
+    return f"""<div id="sent" class="sent" hidden>Sent. Thank you.</div>
 <form id="contact" class="form" action="https://api.web3forms.com/submit" method="POST">
   <input type="hidden" name="access_key" value="{WEB3FORMS_KEY}">
   <input type="hidden" name="subject" value="New message from sherryguo8023.github.io">
   <input type="hidden" name="from_name" value="Personal website">
   <input type="hidden" name="redirect" value="{redirect}">
   <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
-  <label for="c-name">Your name</label>
+  <label for="c-name">Name</label>
   <input id="c-name" type="text" name="name" required>
-  <label for="c-email">Email, if you'd like a reply</label>
+  <label for="c-email">Email (optional, for a reply)</label>
   <input id="c-email" type="email" name="email">
   <label for="c-msg">Message</label>
   <textarea id="c-msg" name="message" required></textarea>
-  <button type="submit">Send message</button>
+  <button type="submit">Send</button>
 </form>
 <script>
 if (new URLSearchParams(location.search).get('sent') === '1') {{
@@ -179,54 +169,52 @@ if (new URLSearchParams(location.search).get('sent') === '1') {{
 # ---------------------------------------------------------------- pages
 
 def build_home(base, projects, pubs):
-    bside = projects[0]
-    rest = projects[1:]
-    stores = "".join(
-        f'<li><a href="{esc(u)}">{esc(l)}<span>{esc(note)}</span></a></li>'
-        for l, u, note in [
-            ("Steam", "https://store.steampowered.com/app/3649950/Bside/", "PC"),
-            ("App Store", "https://apps.apple.com/us/app/bside/id6757434275", "iOS"),
-            ("Google Play", "https://play.google.com/store/apps/details?id=com.kotoko.bside", "Android"),
-            ("bside.zone", "https://www.bside.zone/", "official site"),
-        ]
-    )
+    pc = next(p for p in projects if p["slug"] == "1bside")
+    mobile = next(p for p in projects if p["slug"] == "bside-mobile")
+    rest = [p for p in projects if p["slug"] not in ("1bside", "bside-mobile")]
+
+    def duo(p, img, links, text):
+        ls = "".join(f'<li><a href="{esc(u)}">{esc(l)}</a></li>' for l, u in links)
+        return f"""<div class="duo__item">
+  <a href="{base}/portfolio/{p['slug']}/"><img class="duo__img" src="/images/{img}" alt=""></a>
+  <h3 class="duo__title"><a href="{base}/portfolio/{p['slug']}/">{esc(p['title'])}</a></h3>
+  <p class="duo__when">{esc(p['years'])}</p>
+  <p>{text}</p>
+  <ul class="duo__links">{ls}</ul>
+</div>"""
+
     body = f"""
 <section class="hero">
   <div>
-    <h1 class="hero__title">I make games where the characters have minds of their own.</h1>
-    <p class="hero__lede">Yunjia Guo, Sherry to most people. Game developer and AI researcher, technical lead at <a href="https://www.kotoko.ai/">Kotoko AI</a>, physicist by training, cat person by conviction.</p>
+    <h1 class="hero__title">Game developer and AI researcher.</h1>
+    <p class="hero__lede">I lead engineering at <a href="https://www.kotoko.ai/">Kotoko AI</a>, where we make games built around AI characters: Bside for PC on Steam, and Bside Mobile on iOS and Android. Before that I worked on combat systems at Tencent and procedural cities at NetEase, and studied physics.</p>
     <ul class="hero__links">
-      <li><a href="{base}/portfolio/">What I've built</a></li>
-      <li><a href="{base}/publications/">What I've written</a></li>
+      <li><a href="{base}/portfolio/">Projects</a></li>
+      <li><a href="{base}/publications/">Papers</a></li>
       <li><a href="https://www.linkedin.com/in/yunjiaguo/">LinkedIn</a></li>
     </ul>
   </div>
   <figure class="snap">
-    <img src="/images/me.jpg" alt="Yunjia Guo sitting on a bench by a river on an overcast, windy day" width="1536" height="1152">
-    <figcaption>me, on a windy day</figcaption>
+    <img src="/images/me.jpg" alt="Yunjia Guo" width="1536" height="1152">
   </figure>
 </section>
 
-<section class="section" id="now">
+<section class="section" id="bside">
   <div class="section__head">
-    <h2>Right now: Bside</h2>
-    <p>A social simulation game on Steam, iOS and Android where every character is driven by a language model. I have led its engineering from the first prototype through international launch, across three generations of client, server and character systems.</p>
+    <h2>Bside</h2>
+    <p>Two games under one name, built for different platforms. Characters and the character creator are shared; the games are not.</p>
   </div>
-  <a href="{base}/portfolio/1bside/"><img class="feature__img" src="/images/bside-keyart.jpg" alt="Bside key art" width="1600" height="900"></a>
-  <div class="feature__body">
-    <div>
-      <h3 class="feature__title"><a href="{base}/portfolio/1bside/">{esc(bside['title'])}</a></h3>
-      <p>{esc(bside['tagline'])} Players create characters with their own looks, backstory and personality, then watch them live, talk and act in a shared world, on PC and on their phones. The hard part, and the part I care about, is keeping open-ended model behaviour controllable, executable and meaningful inside a live multiplayer game.</p>
-      <p><a href="{base}/portfolio/1bside/">More about Bside</a></p>
-    </div>
-    <ul class="feature__stores">{stores}</ul>
+  <div class="duo">
+    {duo(pc, 'bside-keyart.jpg', [("Steam", "https://store.steampowered.com/app/3649950/Bside/")],
+         "A multiplayer social world with no NPCs. Every character belongs to a player and is run by a multi-agent LLM runtime; players steer with a whisper rather than a joystick. Steam Early Access since October 2025.")}
+    {duo(mobile, 'bside-mobile-home.jpg', [("App Store", "https://apps.apple.com/us/app/bside/id6757434275"), ("Google Play", "https://play.google.com/store/apps/details?id=com.kotoko.bside")],
+         "Create a character, then raise it. It posts about its day, goes on adventures on its own, appears in your own videos, and talks when you want it to. On iOS and Android since March 2026.")}
   </div>
 </section>
 
 <section class="section" id="projects">
   <div class="section__head">
     <h2>Earlier work</h2>
-    <p>From AI companions back to procedural cities, crowd simulation and a physics thesis that used BERT on chemical formulas.</p>
   </div>
   <ul class="rows">{''.join(project_row(p, base) for p in rest)}</ul>
 </section>
@@ -234,52 +222,49 @@ def build_home(base, projects, pubs):
 <section class="section" id="papers">
   <div class="section__head">
     <h2>Papers</h2>
-    <p>What we learned building Bside, written down for the HCI and game AI communities.</p>
+    <p>Research on LLM-driven characters in games.</p>
   </div>
-  {papers_list(pubs, base)}
-  <p style="margin-top:1.2rem"><a href="{base}/publications/">Abstracts and details</a></p>
+  {papers_list(pubs)}
+  <p style="margin-top:1.2rem"><a href="{base}/publications/">Abstracts</a></p>
 </section>
 
-<section class="section" id="road">
+<section class="section" id="background">
   <div class="section__head">
-    <h2>The road here</h2>
-    <p>Physics first, then games, then the two together.</p>
+    <h2>Background</h2>
   </div>
   <ul class="road">
-    <li><time>2023 – now</time><p><b>Kotoko AI</b>, CTO and hands-on technical lead. Bside, Dobit, and the LLM character systems underneath them.</p></li>
-    <li><time>2022 – 2023</time><p><b>Tencent Games, TiMi Studios.</b> Core character, control, camera and ability framework systems in Unreal Engine 4 for an AAA open-world action game, plus Unity work.</p></li>
-    <li><time>2020 – 2021</time><p><b>NetEase Games.</b> Procedural urban generation in Houdini, then stylised rendering for an online multiplayer demo.</p></li>
+    <li><time>2023 – now</time><p><b>Kotoko AI.</b> Technical lead for Dobit, Bside for PC and Bside Mobile, and the LLM character systems underneath them.</p></li>
+    <li><time>2022 – 2023</time><p><b>Tencent Games, TiMi Studios.</b> Character, control, camera and ability framework systems in Unreal Engine 4 for an AAA open-world action game; Unity work on other titles.</p></li>
+    <li><time>2020 – 2021</time><p><b>NetEase Games.</b> Procedural urban generation in Houdini; stylised rendering for an online multiplayer demo.</p></li>
     <li><time>2019 – 2021</time><p><b>Utrecht University</b>, MSc Game and Media Technology. Procedural content generation and crowd simulation.</p></li>
-    <li><time>2015 – 2019</time><p><b>University of Chinese Academy of Sciences</b>, BSc Physics, minor in mathematics. Superconductors and ARPES at the Institute of Physics, a summer at the Max Planck Institute for Solid State Research, and a thesis on machine learning for topological materials.</p></li>
+    <li><time>2015 – 2019</time><p><b>University of Chinese Academy of Sciences</b>, BSc Physics, minor in mathematics. Superconductor research at the Institute of Physics, a summer at the Max Planck Institute for Solid State Research, and a thesis on machine learning for topological materials.</p></li>
   </ul>
-  <p style="margin-top:1.2rem"><a href="{base}/cv/">Full CV</a>. Finalist for the Innovator Award at the Women in Tech Awards 2026.</p>
+  <p style="margin-top:1.2rem"><a href="{base}/cv/">Full CV</a>. Finalist, Innovator Award, Women in Tech Awards 2026.</p>
 </section>
 
-<section class="section" id="off">
+<section class="section" id="outside">
   <div class="section__head">
-    <h2>Off the clock</h2>
+    <h2>Outside work</h2>
   </div>
   <div class="aside2">
     <div class="prose">
-      <p>I play a lot. RTS, shooters, puzzle games, roguelikes, idle games. StarCraft II is the one I keep coming back to; I main Zerg and will defend Sarah Kerrigan to anyone. Overwatch's sound design is the reason I went into games in the first place, and AlphaStar beating humans at my favourite game is the reason I believe games are where AI gets tested for real.</p>
-      <p>On Steam and itch.io I look for new releases and play them properly. A few favourites among many: Balatro, Stacklands, A Dance of Fire and Ice, Chillquarium, the Rusty Lake series, There Is No Game, Melvor Idle, BattleBlock Theater, Risk of Rain.</p>
+      <p>I play a lot: RTS, shooters, puzzle games, roguelikes, idle games. StarCraft II most of all, as Zerg. Overwatch's sound design is what got me into game development. I keep an eye on new releases on Steam and itch.io; recent favourites include Balatro, Stacklands, A Dance of Fire and Ice, Chillquarium, the Rusty Lake series, There Is No Game, Melvor Idle, BattleBlock Theater and Risk of Rain.</p>
     </div>
     <div>
       <div class="catpile">
         <img src="/images/cats/guagua.jpg" alt="Guagua" width="104" height="104">
         <img src="/images/cats/lily.jpg" alt="Lily" width="104" height="104">
         <img src="/images/cats/spot.jpg" alt="Spot" width="104" height="104">
-        <span class="catpile__note">Guagua, Lily, Spot</span>
       </div>
-      <p>We rescue street cats, get them neutered, and find them homes. Three of them decided they were already home. <a href="{base}/cats/">The cats</a>.</p>
+      <p>We rescue street cats, get them neutered and find them homes. Guagua, Lily and Spot stayed. <a href="{base}/cats/">More about the cats</a>.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="hi">
+<section class="section" id="contact">
   <div class="section__head">
-    <h2>Say hi</h2>
-    <p>Games, AI characters, research, cats. Messages land in my inbox.</p>
+    <h2>Contact</h2>
+    <p>Messages go straight to my inbox. Email is optional.</p>
   </div>
   {contact_form(base)}
 </section>
@@ -291,7 +276,6 @@ def build_projects_index(base, projects):
     body = f"""
 <header class="pagehead">
   <h1>Projects</h1>
-  <p class="lede">Seven things, in the order I would show them to you.</p>
 </header>
 <ul class="rows">{''.join(project_row(p, base) for p in projects)}</ul>
 """
@@ -301,13 +285,14 @@ def build_projects_index(base, projects):
 def build_project(base, p):
     links = "".join(f'<li><a href="{esc(u)}">{esc(l)}</a></li>' for l, u in (p.get("links") or []))
     meta = f'<li>{esc(p["years"])}</li><li>{esc(p["role"])}</li>{links}'
+    hero_cls = "hero-img img--phone" if p.get("hero_phone") else "hero-img"
     body = f"""
 <header class="pagehead">
   <h1>{esc(p['title'])}</h1>
   <p class="lede">{esc(p['tagline'])}</p>
   <ul class="meta">{meta}</ul>
 </header>
-<img class="hero-img" src="/images/{p['hero']}" alt="">
+<img class="{hero_cls}" src="/images/{p['hero']}" alt="">
 <div class="prose">
 {md(p['body'], base)}
 <hr>
@@ -321,16 +306,16 @@ def build_pubs(base, pubs):
     body = f"""
 <header class="pagehead">
   <h1>Papers</h1>
-  <p class="lede">Research from building Bside, at the meeting point of games and HCI.</p>
+  <p class="lede">Research on LLM-driven characters in games.</p>
 </header>
-{papers_list(pubs, base, with_summary=True)}
+{papers_list(pubs, with_summary=True)}
 """
     return page(base, title="Papers", body=body, current="/publications/")
 
 
 def build_cv(base, pubs):
     fm, text = front_matter(read(os.path.join(CONTENT, "cv.md")))
-    html_body = md(text, base).replace("<!-- PUBLICATIONS -->", papers_list(pubs, base))
+    html_body = md(text, base).replace("<!-- PUBLICATIONS -->", papers_list(pubs))
     body = f"""
 <header class="pagehead">
   <h1>CV</h1>
@@ -359,19 +344,19 @@ def build_cats(base):
 def build_contact(base):
     body = f"""
 <header class="pagehead">
-  <h1>Say hi</h1>
-  <p class="lede">Games, AI characters, research, cats. Messages land in my inbox.</p>
+  <h1>Contact</h1>
+  <p class="lede">Messages go straight to my inbox. Email is optional.</p>
 </header>
 {contact_form(base)}
 """
-    return page(base, title="Say hi", body=body, current="/contact/")
+    return page(base, title="Contact", body=body, current="/contact/")
 
 
 def build_404(base):
     body = f"""
 <header class="pagehead">
-  <h1>Nothing here.</h1>
-  <p class="lede">The page moved or never existed. <a href="{base}/">Back to the start</a>.</p>
+  <h1>Page not found</h1>
+  <p class="lede"><a href="{base}/">Back to the start</a>.</p>
 </header>
 """
     return page(base, title="Not found", body=body)

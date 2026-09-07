@@ -1,8 +1,8 @@
 ---
 slug: 6topo_ml
-order: 7
+order: 8
 title: Predicting topological materials with language models
-tagline: BERT on chemical formulas, before that was a normal thing to do.
+tagline: Predicting topological properties of materials with a BERT classifier over chemical formulas.
 years: 2018 – 2019
 role: Bachelor's thesis, UCAS, with Max Planck Institute for Solid State Research
 thumb: topo-ml-banner.png
@@ -11,7 +11,7 @@ links:
   - ["Materiae database", "https://cmpdc.iphy.ac.cn/materiae/#/"]
 ---
 
-A machine learning approach to predicting the topological properties of materials using natural language processing techniques. In 2018 that meant treating a chemical formula as a sentence and asking a language model what it thought.
+A machine learning approach to predicting the topological properties of materials using natural language processing techniques. In 2018 that meant treating a chemical formula as a sequence and training a language model to classify it.
 
 ## How it works
 

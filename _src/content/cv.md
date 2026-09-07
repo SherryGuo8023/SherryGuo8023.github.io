@@ -2,13 +2,13 @@
 title: CV
 ---
 
-Technical leader with a background in physics and game technology, specialising in AI systems for games. Hands-on technical lead of [Bside](https://www.bside.zone/), an AI-native social simulation game shipped on [Steam](https://store.steampowered.com/app/3649950/Bside/) and [mobile](https://apps.apple.com/us/app/bside/id6757434275), from first prototype to international launch across three generations of LLM-native systems.
+Technical leader with a background in physics and game technology, specialising in AI systems for games. Technical lead of three shipped AI character products at Kotoko AI: Dobit, [Bside for PC](https://store.steampowered.com/app/3649950/Bside/) on Steam, and [Bside Mobile](https://apps.apple.com/us/app/bside/id6757434275) on iOS and Android.
 
 ## Experience
 
 **Kotoko AI**, Chief Technology Officer, Nov 2023 – present
 
-- Led end-to-end development of Bside, an AI social simulation game, architecting the core game systems and multi-agent framework from the ground up
+- Led engineering from first prototype to international launch for Dobit, Bside for PC and Bside Mobile, architecting the core game systems and multi-agent framework from the ground up
 - Designed and implemented the AI architecture integrating LLM-based multi-agent systems with a social simulation engine, across three generations of client, server and character systems
 - Established the technical infrastructure and development pipeline supporting rapid iteration of game features and AI capabilities
 - Built and mentored a cross-functional engineering team

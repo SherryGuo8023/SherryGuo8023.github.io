@@ -1,6 +1,6 @@
 ---
 slug: 3giffy
-order: 3
+order: 4
 title: Anime Giffy
 tagline: A Discord bot that turns a text description into a chibi character GIF.
 years: 2025

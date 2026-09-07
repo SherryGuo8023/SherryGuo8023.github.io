@@ -3,50 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bside – Yunjia Guo</title>
-<meta name="description" content="A social simulation game where the characters think for themselves.">
+<title>Bside for PC – Yunjia Guo</title>
+<meta name="description" content="A multiplayer social world on Steam. Every character belongs to a player and is run by AI.">
 <link rel="icon" href="/images/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap">
 <link rel="stylesheet" href="/new/style.css">
 </head>
 <body>
 <header class="wrap top">
   <a class="top__name" href="/new/">Yunjia Guo</a>
-  <nav aria-label="Main"><ul class="top__nav"><li><a href="/new/portfolio/" aria-current="page">Projects</a></li><li><a href="/new/publications/">Papers</a></li><li><a href="/new/cv/">CV</a></li><li><a href="/new/cats/">Cats</a></li><li><a href="/new/contact/">Say hi</a></li></ul></nav>
+  <nav aria-label="Main"><ul class="top__nav"><li><a href="/new/portfolio/" aria-current="page">Projects</a></li><li><a href="/new/publications/">Papers</a></li><li><a href="/new/cv/">CV</a></li><li><a href="/new/cats/">Cats</a></li><li><a href="/new/contact/">Contact</a></li></ul></nav>
 </header>
 <main class="wrap">
 
 <header class="pagehead">
-  <h1>Bside</h1>
-  <p class="lede">A social simulation game where the characters think for themselves.</p>
-  <ul class="meta"><li>2024 – now</li><li>Technical lead, Kotoko AI</li><li><a href="https://www.bside.zone/">Official site</a></li><li><a href="https://store.steampowered.com/app/3649950/Bside/">Steam</a></li><li><a href="https://apps.apple.com/us/app/bside/id6757434275">App Store</a></li><li><a href="https://play.google.com/store/apps/details?id=com.kotoko.bside">Google Play</a></li></ul>
+  <h1>Bside for PC</h1>
+  <p class="lede">A multiplayer social world on Steam. Every character belongs to a player and is run by AI.</p>
+  <ul class="meta"><li>2024 – 2025</li><li>Technical lead, Kotoko AI</li><li><a href="https://store.steampowered.com/app/3649950/Bside/">Steam</a></li><li><a href="https://www.bside.zone/">bside.zone</a></li></ul>
 </header>
 <img class="hero-img" src="/images/bside-keyart.jpg" alt="">
 <div class="prose">
-<p>Bside is an AI-native character simulation and social game, shipped on Steam (PC) and on iOS and Android. Players create characters with their own appearance, backstory and personality, then watch them live, talk and act in a shared multiplayer world driven by large language models. The game is our running experiment in how AI characters can make social play richer, and in what a meaningful player-AI relationship looks like.</p>
-<p>I led Bside's engineering from the first prototype through international launch, across three generations of LLM-native client, server and character systems.</p>
-<h2>On PC</h2>
+<p>Bside for PC is a social simulation game released on Steam in Early Access in October 2025. There are no NPCs. Every character in the world, called a Biibit, belongs to a real player, but the player does not control it directly: a multi-agent runtime built on large language models decides what each Biibit does, who it talks to and how it reacts. Players shape their character through its personality and backstory, watch it live alongside other players' characters in shared rooms, and nudge it with a whisper when they want to.</p>
+<p>The game also runs as a desktop mate: your Biibit lives on your desktop while you work, and steps back into the world when you open the game.</p>
+<h2>What players do</h2>
 <ul>
-<li>A real-time 3D social world where LLM-driven characters interact with each other and with players</li>
+<li>Create a Biibit with its own look, backstory and personality</li>
+<li>Join or host a Space, a shared room where up to a couple of dozen characters live together in real time</li>
+<li>Watch characters talk, cook, camp, dance and get into each other's business</li>
+<li>Whisper to your character to steer it without taking it over</li>
 <li>Community-created story worlds and a playground mode</li>
-<li>Desktop mate: your character lives on your desktop when you are not in the game</li>
 </ul>
-<p><img alt="Characters hanging out around a campfire on Bside PC, with the player choosing what to do next" src="/images/bside-pc-world.jpg" /></p>
-<p><img alt="A character's room on Bside PC" src="/images/bside-pc-room.jpg" /></p>
-<h2>On mobile</h2>
-<ul>
-<li>Create your character and chat with it anywhere; its replies follow the personality and backstory you defined</li>
-<li>A social feed where characters post daily updates about their lives</li>
-<li>Cooperative adventures with friends' characters</li>
-<li>Idle adventure gameplay with AI-generated comic recaps of what happened while you were away</li>
-</ul>
-<p><img class="img--phone" src="/images/bside-mobile-home.jpg" alt="Bside mobile home screen: chat, adventure, playground, bond, style, vlog"></p>
+<p><img alt="Characters around a campfire in a shared Space, with the player choosing what to suggest to their character" src="/images/bside-pc-world.jpg" /></p>
+<p><img alt="A Biibit's room" src="/images/bside-pc-room.jpg" /></p>
 <h2>Under the hood</h2>
-<p><strong>Multi-agent LLM system.</strong> A real-time multi-agent architecture so characters can talk to each other naturally, with memory and personality systems that keep each character consistent over time, and dialogue generation that stays in character.</p>
-<p><strong>Social interaction framework.</strong> Systems for AI-to-AI and AI-to-player interaction, behaviour patterns that let social dynamics emerge, and emotion and relationship simulation underneath.</p>
-<p><strong>Research.</strong> A user study on player-AI interaction patterns and the social catalyst effect of AI characters. The control framework behind Bside's characters is written up in <a href="https://arxiv.org/abs/2604.04703">Bounded Autonomy: Controlling LLM Characters in Live Multiplayer Games</a>, and a case study on grounding LLM characters into executable gameplay is accepted at AIIDE 2026. See <a href="/new/publications/">Papers</a>.</p>
+<p>This is the version the three-layer architecture in our research refers to, and the hardest engineering of the three products I have led at Kotoko AI.</p>
+<p><strong>Behaviours as bundles.</strong> Characters run behaviour bundles with priority, mutual-exclusion and interruption rules, similar in spirit to an ability system in an action game. The model proposes what a character wants to do next; the runtime decides whether that can interrupt what it is doing, and whether the interrupted behaviour resumes or is dropped.</p>
+<p><strong>Turn-by-turn conversation.</strong> Conversations unfold one line at a time, and each participant decides for itself whether to reply, decline, leave or go back to what it was doing. A bounded conversational decay winds exchanges down so two characters do not talk forever.</p>
+<p><strong>A bounded action pool.</strong> Characters do not emit engine commands. The runtime selects from hand-authored, executable actions, with fallbacks, and the model voices the choice in character. Open language, but only actions the game can actually execute and read back.</p>
+<p><strong>Whisper.</strong> The player-steering interface: a suggestion the character will usually follow, never a command with a guaranteed effect.</p>
+<p>The control framework is written up in <a href="https://arxiv.org/abs/2604.04703">Bounded Autonomy: Controlling LLM Characters in Live Multiplayer Games</a>. Bside for PC and <a href="/new/portfolio/bside-mobile/">Bside Mobile</a> are platform-specific designs rather than versions of one game: PC carries the real-time multi-agent simulation suited to long sessions; mobile is built around lighter daily loops.</p>
 <hr>
 <p><a href="/new/portfolio/">All projects</a></p>
 </div>
@@ -54,7 +51,6 @@
 </main>
 <footer class="wrap foot">
   <span>Yunjia Guo, 2026</span>
-  <span>No template, no tracking, no cookies.</span>
 </footer>
 </body>
 </html>

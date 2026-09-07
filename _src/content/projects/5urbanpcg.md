@@ -1,6 +1,6 @@
 ---
 slug: 5urbanpcg
-order: 6
+order: 7
 title: Procedural urban generation
 tagline: A 4 km² city from a heightmap, with roads that follow the terrain and buildings built by Wave Function Collapse.
 years: 2020
