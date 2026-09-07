@@ -18,7 +18,7 @@ Technical leader with a background in physics and game technology, specialising 
 - Architected and implemented core combat systems for an AAA open-world action game in Unreal Engine 4, including the skill editor framework and combat mechanics
 - Developed the character controller (3C: character, control, camera) integrating locomotion, animation state machines and combat feedback
 - Delivered gameplay features across multiple titles and tech stacks (Unreal, Unity)
-- Credits: Metal Slug: Awakening; Honor of Kings: Breaking Dawn (cancelled before release); an unannounced project
+- Credits: Metal Slug: Awakening; Honor of Kings: Breaking Dawn (cancelled before release); an unannounced AAA anime-style open-world action shooter
 
 **NetEase Games**, Game Engine Developer, Sep 2021 – Nov 2021
 
