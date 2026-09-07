@@ -10,8 +10,8 @@
 locale                   : "en-US"
 title                    : "Yunjia Guo"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
+name                     : &name "Yunjia Guo"
+description              : &description "Yunjia (Sherry) Guo - CTO at Kotoko AI, game developer and AI researcher working on LLM-driven characters in live games."
 url                      : https://sherryguo8023.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "sherryguo8023/sherryguo8023.github.io"
@@ -24,9 +24,9 @@ author:
   avatar           : "profile.png"
   name             : "Yunjia Guo"
   pronouns         : # example: "she/her"  
-  bio              : "game | ai | cat"
-  location         : "Earth"
-  employer         : "Kotoko"
+  bio              : "CTO @ Kotoko AI · game | ai | cat"
+  location         : "Shanghai, China"
+  employer         : "Kotoko AI"
   employer_url     : "https://www.kotoko.ai/"
   uri              : # URL
   email            : "yunjia413@gmail.com" 
@@ -77,12 +77,10 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
+  preprints:
+    title: 'Preprints'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"

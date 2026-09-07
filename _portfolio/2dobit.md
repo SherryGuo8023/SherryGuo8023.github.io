@@ -36,7 +36,10 @@ DOBIT is a cross-platform AI companion game that combines generative AI characte
 - Dynamic character interactions
 - Real-time emotion system
 
-## Media 
+## Research
+- The path from Dobit to Bside is the subject of a case study accepted at AIIDE 2026: see [Publications](/publications/)
+
+## Media
 - [YouTube Review 1](https://www.youtube.com/watch?v=8hRC9d4-f5c)
 - [YouTube Review 2](https://www.youtube.com/watch?v=LvezYDDMTI4)
 
