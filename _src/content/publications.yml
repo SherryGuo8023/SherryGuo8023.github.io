@@ -1,0 +1,44 @@
+# Publications, newest first. Rendered on the home page, /publications/ and /cv/.
+# status: short phrase shown after the venue. url: leave empty until the paper is public.
+
+- id: bounded-autonomy
+  title: "Bounded Autonomy: Controlling LLM Characters in Live Multiplayer Games"
+  authors: ["Yunjia Guo", "Jinghan Zhu", "Siyu Wang", "Haixin Qiao"]
+  venue: "arXiv:2604.04703 [cs.HC]"
+  year: 2026
+  status: "preprint"
+  url: "https://arxiv.org/abs/2604.04703"
+  summary: >
+    How should LLM characters take part in live multiplayer play while staying executable in
+    the shared world, coherent with the other characters, and steerable by players? The paper
+    organises character control around three interfaces: agent-to-agent communication kept
+    stable with probabilistic reply-chain decay, world actions grounded through embeddings with
+    fallbacks, and a "whisper" that lets players nudge a character without taking it over.
+    Deployed in Bside; a formative analysis of the live game shows the architecture keeping
+    interaction stable and player interventions landing.
+
+- id: dobit-to-bside
+  title: "Dobit to Bside: Grounding LLM Characters into Executable Gameplay"
+  authors: ["Yunjia Guo", "Jinghan Zhu"]
+  venue: "AIIDE 2026, Case Studies track"
+  year: 2026
+  status: "accepted, to appear"
+  url: ""
+  summary: >
+    A case study of the road from Dobit, a single AI companion, to Bside, a shipped multiplayer
+    social simulation: what it took to turn open-ended model output into actions the game can
+    actually execute, and what we learned across three generations of character systems.
+    Presentation scheduled for November 2026; the paper will be linked once published.
+
+- id: raise-dont-replace
+  title: "Raise, Don't Replace: Two Kinds of Connection in AI Character Products"
+  authors: ["Jinghan Zhu", "Yunjia Guo"]
+  venue: "BritCHI 2026 (39th International BCS Human-Computer Interaction Conference), Short Papers track"
+  year: 2026
+  status: "accepted, to appear"
+  url: ""
+  summary: >
+    A short paper that separates two kinds of connection an AI character product can support,
+    connection with the character and connection between people that the character catalyses,
+    and argues for designs that raise human relationships rather than replace them. Brunel
+    University of London, 1 to 3 November 2026.
