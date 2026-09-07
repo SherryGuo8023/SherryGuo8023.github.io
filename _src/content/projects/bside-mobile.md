@@ -14,7 +14,7 @@ links:
   - ["bside.zone", "https://www.bside.zone/"]
 ---
 
-Bside Mobile launched on iOS and Android in March 2026 and is the product I currently spend most of my time on. It shares a name, an art style and the character creator with [Bside for PC]({{base}}/portfolio/1bside/), and characters made on one can be used on the other, but it is a different game built for a different platform.
+Bside Mobile launched on iOS and Android in March 2026 and is the product I currently spend most of my time on. It shares a name, an art style and the character creator with [Bside: Desktop Mate]({{base}}/portfolio/1bside/), and characters made on one can be used on the other, but it is a different game built for a different platform.
 
 The core is not chat. It is: create a character, then raise it. There are no preset characters and no NPCs. You build yours from personality tags and free text, and that personality drives how it acts, what it posts and how it plays.
 
@@ -28,4 +28,4 @@ The core is not chat. It is: create a character, then raise it. There are no pre
 
 ## Why a separate design
 
-Sessions on a phone are short and frequent, latency budgets are tight, and every interaction has to pay for itself. Instead of the real-time multi-agent simulation that Bside for PC runs, Bside Mobile is built around mobile-native loops: lightweight nurturing, asynchronous presence through the feed, and generative image and video content, which only became affordable enough for a core loop in the last couple of years. Same characters, different game.
+Sessions on a phone are short and frequent, latency budgets are tight, and every interaction has to pay for itself. Instead of the real-time multi-agent simulation that Bside: Desktop Mate runs, Bside Mobile is built around mobile-native loops: lightweight nurturing, asynchronous presence through the feed, and generative image and video content, which only became affordable enough for a core loop in the last couple of years. Same characters, different game.

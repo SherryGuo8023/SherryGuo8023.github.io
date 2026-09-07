@@ -85,6 +85,11 @@ def page(base, *, title, body, current=None, description=""):
 <footer class="wrap foot">
   <span>Yunjia Guo, 2026</span>
 </footer>
+<script>
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {{
+  document.querySelectorAll('video[autoplay]').forEach(function (v) {{ v.removeAttribute('autoplay'); v.pause(); }});
+}}
+</script>
 </body>
 </html>
 """
@@ -112,6 +117,22 @@ def load_projects():
 
 def load_pubs():
     return yaml.safe_load(read(os.path.join(CONTENT, "publications.yml")))
+
+
+def load_talks():
+    return yaml.safe_load(read(os.path.join(CONTENT, "talks.yml")))
+
+
+def talks_list(talks):
+    items = []
+    for t in talks:
+        links = " ".join(f'<a href="{esc(u)}">{esc(l)}</a>' for l, u in (t.get("links") or []))
+        items.append(f"""<li class="paper">
+  <h3 class="paper__title">{esc(t['title'])}</h3>
+  <p class="paper__venue">{esc(t['event'])}, {t['year']}.</p>
+  <p class="paper__summary">{esc(t['summary'])} {links}</p>
+</li>""")
+    return '<ul class="papers">' + "".join(items) + "</ul>"
 
 
 def paper_html(p, with_summary):
@@ -168,15 +189,19 @@ if (new URLSearchParams(location.search).get('sent') === '1') {{
 
 # ---------------------------------------------------------------- pages
 
-def build_home(base, projects, pubs):
+def build_home(base, projects, pubs, talks):
     pc = next(p for p in projects if p["slug"] == "1bside")
     mobile = next(p for p in projects if p["slug"] == "bside-mobile")
     rest = [p for p in projects if p["slug"] not in ("1bside", "bside-mobile")]
 
-    def duo(p, img, links, text):
+    def duo(p, img, links, text, video=None):
         ls = "".join(f'<li><a href="{esc(u)}">{esc(l)}</a></li>' for l, u in links)
+        if video:
+            media = f'<video class="duo__img" autoplay muted loop playsinline preload="metadata" poster="/images/{img}" src="{video}"></video>'
+        else:
+            media = f'<img class="duo__img" src="/images/{img}" alt="">'
         return f"""<div class="duo__item">
-  <a href="{base}/portfolio/{p['slug']}/"><img class="duo__img" src="/images/{img}" alt=""></a>
+  <a href="{base}/portfolio/{p['slug']}/">{media}</a>
   <h3 class="duo__title"><a href="{base}/portfolio/{p['slug']}/">{esc(p['title'])}</a></h3>
   <p class="duo__when">{esc(p['years'])}</p>
   <p>{text}</p>
@@ -187,7 +212,7 @@ def build_home(base, projects, pubs):
 <section class="hero">
   <div>
     <h1 class="hero__title">Game developer and AI researcher.</h1>
-    <p class="hero__lede">I lead engineering at <a href="https://www.kotoko.ai/">Kotoko AI</a>, where we make games built around AI characters: Bside for PC on Steam, and Bside Mobile on iOS and Android. Before that I worked on combat systems at Tencent and procedural cities at NetEase, and studied physics.</p>
+    <p class="hero__lede">I lead engineering at <a href="https://www.kotoko.ai/">Kotoko AI</a>, where we make games built around AI characters: Bside: Desktop Mate on Steam, and Bside Mobile on iOS and Android. Before that I worked on combat systems at Tencent and procedural cities at NetEase, and studied physics.</p>
     <ul class="hero__links">
       <li><a href="{base}/portfolio/">Projects</a></li>
       <li><a href="{base}/publications/">Papers</a></li>
@@ -206,7 +231,8 @@ def build_home(base, projects, pubs):
   </div>
   <div class="duo">
     {duo(pc, 'bside-keyart.jpg', [("Steam", "https://store.steampowered.com/app/3649950/Bside/")],
-         "A multiplayer social world with no NPCs. Every character belongs to a player and is run by a multi-agent LLM runtime; players steer with a whisper rather than a joystick. Steam Early Access since October 2025.")}
+         "A multiplayer social world with no NPCs. Every character belongs to a player and is run by a multi-agent LLM runtime; players steer with a whisper rather than a joystick. Steam Early Access since October 2025.",
+         video="/video/bside-desktop-mate.mp4")}
     {duo(mobile, 'bside-mobile-home.jpg', [("App Store", "https://apps.apple.com/us/app/bside/id6757434275"), ("Google Play", "https://play.google.com/store/apps/details?id=com.kotoko.bside")],
          "Create a character, then raise it. It posts about its day, goes on adventures on its own, appears in your own videos, and talks when you want it to. On iOS and Android since March 2026.")}
   </div>
@@ -228,14 +254,21 @@ def build_home(base, projects, pubs):
   <p style="margin-top:1.2rem"><a href="{base}/publications/">Abstracts</a></p>
 </section>
 
+<section class="section" id="talks">
+  <div class="section__head">
+    <h2>Talks</h2>
+  </div>
+  {talks_list(talks)}
+</section>
+
 <section class="section" id="background">
   <div class="section__head">
     <h2>Background</h2>
   </div>
   <ul class="road">
-    <li><time>2023 – now</time><p><b>Kotoko AI.</b> Technical lead for Dobit, Bside for PC and Bside Mobile, and the LLM character systems underneath them.</p></li>
-    <li><time>2022 – 2023</time><p><b>Tencent Games, TiMi Studios.</b> Character, control, camera and ability framework systems in Unreal Engine 4 for an AAA open-world action game; Unity work on other titles.</p></li>
-    <li><time>2020 – 2021</time><p><b>NetEase Games.</b> Procedural urban generation in Houdini; stylised rendering for an online multiplayer demo.</p></li>
+    <li><time>2023 – now</time><p><b>Kotoko AI.</b> Technical lead for Dobit, Bside: Desktop Mate and Bside Mobile, and the LLM character systems underneath them.</p></li>
+    <li><time>2022 – 2023</time><p><b>Tencent Games, TiMi Studios.</b> Character, control, camera and ability framework systems in Unreal Engine 4 for an AAA open-world action game; Unity work on other titles. Credits: Metal Slug: Awakening; Honor of Kings: Breaking Dawn (cancelled before release); an unannounced project.</p></li>
+    <li><time>2020 – 2021</time><p><b>NetEase Games.</b> Procedural urban generation in Houdini; stylised rendering for an online multiplayer demo. Credits: Once Human.</p></li>
     <li><time>2019 – 2021</time><p><b>Utrecht University</b>, MSc Game and Media Technology. Procedural content generation and crowd simulation.</p></li>
     <li><time>2015 – 2019</time><p><b>University of Chinese Academy of Sciences</b>, BSc Physics, minor in mathematics. Superconductor research at the Institute of Physics, a summer at the Max Planck Institute for Solid State Research, and a thesis on machine learning for topological materials.</p></li>
   </ul>
@@ -264,7 +297,7 @@ def build_home(base, projects, pubs):
 <section class="section" id="contact">
   <div class="section__head">
     <h2>Contact</h2>
-    <p>Messages go straight to my inbox. Email is optional.</p>
+    <p>Open to academic collaboration, reviewing and talks. Messages go straight to my inbox; email is optional.</p>
   </div>
   {contact_form(base)}
 </section>
@@ -313,9 +346,9 @@ def build_pubs(base, pubs):
     return page(base, title="Papers", body=body, current="/publications/")
 
 
-def build_cv(base, pubs):
+def build_cv(base, pubs, talks):
     fm, text = front_matter(read(os.path.join(CONTENT, "cv.md")))
-    html_body = md(text, base).replace("<!-- PUBLICATIONS -->", papers_list(pubs))
+    html_body = md(text, base).replace("<!-- PUBLICATIONS -->", papers_list(pubs)).replace("<!-- TALKS -->", talks_list(talks))
     body = f"""
 <header class="pagehead">
   <h1>CV</h1>
@@ -345,7 +378,7 @@ def build_contact(base):
     body = f"""
 <header class="pagehead">
   <h1>Contact</h1>
-  <p class="lede">Messages go straight to my inbox. Email is optional.</p>
+  <p class="lede">Open to academic collaboration, reviewing and talks. Messages go straight to my inbox; email is optional.</p>
 </header>
 {contact_form(base)}
 """
@@ -374,13 +407,14 @@ def main():
 
     projects = load_projects()
     pubs = load_pubs()
+    talks = load_talks()
 
-    write(out, "index.html", build_home(base, projects, pubs))
+    write(out, "index.html", build_home(base, projects, pubs, talks))
     write(out, "portfolio/index.html", build_projects_index(base, projects))
     for p in projects:
         write(out, f"portfolio/{p['slug']}/index.html", build_project(base, p))
     write(out, "publications/index.html", build_pubs(base, pubs))
-    write(out, "cv/index.html", build_cv(base, pubs))
+    write(out, "cv/index.html", build_cv(base, pubs, talks))
     write(out, "cats/index.html", build_cats(base))
     write(out, "contact/index.html", build_contact(base))
     write(out, "404.html", build_404(base))

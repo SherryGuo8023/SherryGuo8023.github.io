@@ -15,7 +15,7 @@
     organises character control around three interfaces: agent-to-agent communication kept
     stable with probabilistic reply-chain decay, world actions grounded through embeddings with
     fallbacks, and a whisper that lets players nudge a character without taking it over.
-    Deployed in Bside for PC; a formative analysis of the live game shows the architecture
+    Deployed in Bside: Desktop Mate; a formative analysis of the live game shows the architecture
     keeping interaction stable and player interventions landing.
 
 - id: dobit-to-bside
@@ -27,7 +27,7 @@
   url: ""
   summary: >
     A case study of three products: Dobit, a multiplayer life simulation with an open-ended
-    multi-agent town; Bside for PC, where every character is player-owned and run by a bounded
+    multi-agent town; Bside: Desktop Mate, where every character is player-owned and run by a bounded
     multi-agent runtime; and Bside Mobile, a character-raising game built around AI-native play.
     What it took to turn open-ended model output into actions a game can execute, and how each
     step tracked what language models had become capable of and affordable enough to do.

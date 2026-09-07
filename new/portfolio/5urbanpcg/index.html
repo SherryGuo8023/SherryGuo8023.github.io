@@ -38,5 +38,10 @@
 <footer class="wrap foot">
   <span>Yunjia Guo, 2026</span>
 </footer>
+<script>
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+}
+</script>
 </body>
 </html>

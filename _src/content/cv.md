@@ -2,13 +2,13 @@
 title: CV
 ---
 
-Technical leader with a background in physics and game technology, specialising in AI systems for games. Technical lead of three shipped AI character products at Kotoko AI: Dobit, [Bside for PC](https://store.steampowered.com/app/3649950/Bside/) on Steam, and [Bside Mobile](https://apps.apple.com/us/app/bside/id6757434275) on iOS and Android.
+Technical leader with a background in physics and game technology, specialising in AI systems for games. Technical lead of three shipped AI character products at Kotoko AI: Dobit, [Bside: Desktop Mate](https://store.steampowered.com/app/3649950/Bside/) on Steam, and [Bside Mobile](https://apps.apple.com/us/app/bside/id6757434275) on iOS and Android.
 
 ## Experience
 
 **Kotoko AI**, Chief Technology Officer, Nov 2023 – present
 
-- Led engineering from first prototype to international launch for Dobit, Bside for PC and Bside Mobile, architecting the core game systems and multi-agent framework from the ground up
+- Led engineering from first prototype to international launch for Dobit, Bside: Desktop Mate and Bside Mobile, architecting the core game systems and multi-agent framework from the ground up
 - Designed and implemented the AI architecture integrating LLM-based multi-agent systems with a social simulation engine, across three generations of client, server and character systems
 - Established the technical infrastructure and development pipeline supporting rapid iteration of game features and AI capabilities
 - Built and mentored a cross-functional engineering team
@@ -18,10 +18,12 @@ Technical leader with a background in physics and game technology, specialising 
 - Architected and implemented core combat systems for an AAA open-world action game in Unreal Engine 4, including the skill editor framework and combat mechanics
 - Developed the character controller (3C: character, control, camera) integrating locomotion, animation state machines and combat feedback
 - Delivered gameplay features across multiple titles and tech stacks (Unreal, Unity)
+- Credits: Metal Slug: Awakening; Honor of Kings: Breaking Dawn (cancelled before release); an unannounced project
 
 **NetEase Games**, Game Engine Developer, Sep 2021 – Nov 2021
 
 - Implemented stylised rendering solutions for an online multiplayer demo
+- Credits: Once Human
 
 **NetEase Games**, Game Engine Developer, Jul 2020 – Oct 2020
 
@@ -52,6 +54,10 @@ Technical leader with a background in physics and game technology, specialising 
 ## Publications
 
 <!-- PUBLICATIONS -->
+
+## Talks
+
+<!-- TALKS -->
 
 ## Awards
 

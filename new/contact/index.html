@@ -20,7 +20,7 @@
 
 <header class="pagehead">
   <h1>Contact</h1>
-  <p class="lede">Messages go straight to my inbox. Email is optional.</p>
+  <p class="lede">Open to academic collaboration, reviewing and talks. Messages go straight to my inbox; email is optional.</p>
 </header>
 <div id="sent" class="sent" hidden>Sent. Thank you.</div>
 <form id="contact" class="form" action="https://api.web3forms.com/submit" method="POST">
@@ -48,5 +48,10 @@ if (new URLSearchParams(location.search).get('sent') === '1') {
 <footer class="wrap foot">
   <span>Yunjia Guo, 2026</span>
 </footer>
+<script>
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+}
+</script>
 </body>
 </html>

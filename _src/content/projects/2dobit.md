@@ -28,6 +28,6 @@ Dobit was the first of the three products I have led at Kotoko AI: a multiplayer
 
 ## What it taught us
 
-Open-ended generation produced signs of life: rumours that spread through the whole town, a shopkeeper who could think of nothing but her cats. It also showed that characters need rules the model cannot give itself, about interruption, about ending a conversation, about which actions the game can actually execute. Those lessons became the runtime in [Bside for PC]({{base}}/portfolio/1bside/), and the road from one to the other is the subject of a case study accepted at AIIDE 2026. See [Papers]({{base}}/publications/).
+Open-ended generation produced signs of life: rumours that spread through the whole town, a shopkeeper who could think of nothing but her cats. It also showed that characters need rules the model cannot give itself, about interruption, about ending a conversation, about which actions the game can actually execute. Those lessons became the runtime in [Bside: Desktop Mate]({{base}}/portfolio/1bside/), and the road from one to the other is the subject of a case study accepted at AIIDE 2026. See [Papers]({{base}}/publications/).
 
 Built with Unity, Stable Diffusion and a custom LLM integration layer.

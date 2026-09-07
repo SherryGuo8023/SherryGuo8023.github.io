@@ -25,7 +25,7 @@
 </header>
 <img class="hero-img img--phone" src="/images/bside-mobile-home.jpg" alt="">
 <div class="prose">
-<p>Bside Mobile launched on iOS and Android in March 2026 and is the product I currently spend most of my time on. It shares a name, an art style and the character creator with <a href="/new/portfolio/1bside/">Bside for PC</a>, and characters made on one can be used on the other, but it is a different game built for a different platform.</p>
+<p>Bside Mobile launched on iOS and Android in March 2026 and is the product I currently spend most of my time on. It shares a name, an art style and the character creator with <a href="/new/portfolio/1bside/">Bside: Desktop Mate</a>, and characters made on one can be used on the other, but it is a different game built for a different platform.</p>
 <p>The core is not chat. It is: create a character, then raise it. There are no preset characters and no NPCs. You build yours from personality tags and free text, and that personality drives how it acts, what it posts and how it plays.</p>
 <h2>What the character does</h2>
 <ul>
@@ -36,7 +36,7 @@
 <li><strong>Chat, dress-up and gifts.</strong> Talk to it whenever you like; what you give it affects its mood.</li>
 </ul>
 <h2>Why a separate design</h2>
-<p>Sessions on a phone are short and frequent, latency budgets are tight, and every interaction has to pay for itself. Instead of the real-time multi-agent simulation that Bside for PC runs, Bside Mobile is built around mobile-native loops: lightweight nurturing, asynchronous presence through the feed, and generative image and video content, which only became affordable enough for a core loop in the last couple of years. Same characters, different game.</p>
+<p>Sessions on a phone are short and frequent, latency budgets are tight, and every interaction has to pay for itself. Instead of the real-time multi-agent simulation that Bside: Desktop Mate runs, Bside Mobile is built around mobile-native loops: lightweight nurturing, asynchronous presence through the feed, and generative image and video content, which only became affordable enough for a core loop in the last couple of years. Same characters, different game.</p>
 <hr>
 <p><a href="/new/portfolio/">All projects</a></p>
 </div>
@@ -45,5 +45,10 @@
 <footer class="wrap foot">
   <span>Yunjia Guo, 2026</span>
 </footer>
+<script>
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+}
+</script>
 </body>
 </html>

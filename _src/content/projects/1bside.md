@@ -1,7 +1,7 @@
 ---
 slug: 1bside
 order: 1
-title: Bside for PC
+title: "Bside: Desktop Mate"
 tagline: A multiplayer social world on Steam. Every character belongs to a player and is run by AI.
 years: 2024 – 2025
 role: Technical lead, Kotoko AI
@@ -12,7 +12,9 @@ links:
   - ["bside.zone", "https://www.bside.zone/"]
 ---
 
-Bside for PC is a social simulation game released on Steam in Early Access in October 2025. There are no NPCs. Every character in the world, called a Biibit, belongs to a real player, but the player does not control it directly: a multi-agent runtime built on large language models decides what each Biibit does, who it talks to and how it reacts. Players shape their character through its personality and backstory, watch it live alongside other players' characters in shared rooms, and nudge it with a whisper when they want to.
+<video class="clip" controls playsinline preload="metadata" poster="/video/bside-desktop-mate-poster.jpg" src="/video/bside-desktop-mate.mp4"></video>
+
+Bside: Desktop Mate is a social simulation game released on Steam in Early Access in October 2025. There are no NPCs. Every character in the world, called a Biibit, belongs to a real player, but the player does not control it directly: a multi-agent runtime built on large language models decides what each Biibit does, who it talks to and how it reacts. Players shape their character through its personality and backstory, watch it live alongside other players' characters in shared rooms, and nudge it with a whisper when they want to.
 
 The game also runs as a desktop mate: your Biibit lives on your desktop while you work, and steps back into the world when you open the game.
 
@@ -40,4 +42,4 @@ This is the version the three-layer architecture in our research refers to, and 
 
 **Whisper.** The player-steering interface: a suggestion the character will usually follow, never a command with a guaranteed effect.
 
-The control framework is written up in [Bounded Autonomy: Controlling LLM Characters in Live Multiplayer Games](https://arxiv.org/abs/2604.04703). Bside for PC and [Bside Mobile]({{base}}/portfolio/bside-mobile/) are platform-specific designs rather than versions of one game: PC carries the real-time multi-agent simulation suited to long sessions; mobile is built around lighter daily loops.
+The control framework is written up in [Bounded Autonomy: Controlling LLM Characters in Live Multiplayer Games](https://arxiv.org/abs/2604.04703). Bside: Desktop Mate and [Bside Mobile]({{base}}/portfolio/bside-mobile/) are platform-specific designs rather than versions of one game: PC carries the real-time multi-agent simulation suited to long sessions; mobile is built around lighter daily loops.

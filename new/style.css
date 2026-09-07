@@ -35,7 +35,7 @@ body {
   font-feature-settings: "ss01";
 }
 
-img { max-width: 100%; height: auto; display: block; }
+img, video { max-width: 100%; height: auto; display: block; }
 
 a {
   color: inherit;
@@ -142,6 +142,7 @@ figure { margin: 0; }
 .prose h3 { margin: 1.8rem 0 0.6rem; }
 .prose img { border-radius: 6px; margin: 1.6rem 0; }
 .prose img.img--phone { max-width: 320px; }
+.clip { width: 100%; border-radius: 6px; margin: 0 0 1.6rem; background: #000; }
 .prose > :first-child { margin-top: 0; }
 .prose--wide { max-width: none; }
 .prose--wide > p, .prose--wide > ul, .prose--wide > h2 { max-width: var(--measure); }

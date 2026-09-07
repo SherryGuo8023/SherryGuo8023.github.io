@@ -12,3 +12,6 @@ Gemfile.lock
 node_modules
 package-lock.json
 /.vscode/settings.json
+
+# Original uncompressed video, kept locally only
+video/Bounded Autonomy-Video Preview.mp4

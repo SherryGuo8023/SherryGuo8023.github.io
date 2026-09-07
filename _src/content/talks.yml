@@ -1,0 +1,10 @@
+# Talks, newest first. Rendered on the home page and /cv/.
+# links: list of [label, url]. image: optional filename in /images.
+
+- title: "Google Technologies Empowering Game Development"
+  event: "Google Developer Groups (GDG) China, online technical talk"
+  year: 2025
+  summary: "Production AI agents in games and AI-assisted development workflows. In Chinese."
+  links:
+    - ["Recording on Bilibili", "https://www.bilibili.com/video/BV1VzdDYyEMK/"]
+    - ["GDG post", "https://ctalks.gdgcn.net/blog/develop-1/2025nian-4yue-10ri-gu-ge-zhu-li-qi-ye-cheng-gong-chu-hai-58"]
