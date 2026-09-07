@@ -37,7 +37,3 @@ Game developer and AI researcher with a background in physics. Technical lead at
 
 - Finalist, Innovator Award, Women in Tech Awards 2026
 - Second Prize, Urban Mobility Hackathon 2021
-
-## Skills
-
-AI system architecture, multi-agent LLM systems, game development, technical leadership. Unreal Engine, Unity, Houdini, Python, C++, C#.
