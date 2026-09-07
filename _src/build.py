@@ -30,7 +30,7 @@ NAV = [
     ("Contact", "/contact/"),
 ]
 
-DESCRIPTION = "Yunjia Guo: game developer and AI researcher. Technical lead at Kotoko AI for Bside."
+DESCRIPTION = "Yunjia Guo — I make AI characters that live inside games."
 
 
 def esc(s):
@@ -211,8 +211,8 @@ def build_home(base, projects, pubs, talks):
     body = f"""
 <section class="hero">
   <div>
-    <h1 class="hero__title">Game developer and AI researcher.</h1>
-    <p class="hero__lede">I lead engineering at <a href="https://www.kotoko.ai/">Kotoko AI</a>, where we make games built around AI characters: Bside on iOS and Android, and Bside: Desktop Mate on Steam. Before that I worked on combat systems at Tencent and procedural cities at NetEase, and studied physics.</p>
+    <h1 class="hero__title">I make AI characters that live inside games.</h1>
+    <p class="hero__lede">They post about their day, wander into trouble, and sometimes listen when you tell them not to. I build the systems that keep them alive at <a href="https://www.kotoko.ai/">Kotoko AI</a>, and write about it when something interesting happens.</p>
     <ul class="hero__links">
       <li><a href="{base}/portfolio/">Projects</a></li>
       <li><a href="{base}/publications/">Papers</a></li>
@@ -227,13 +227,13 @@ def build_home(base, projects, pubs, talks):
 <section class="section" id="bside">
   <div class="section__head">
     <h2>Bside</h2>
-    <p>Bside on iOS and Android, and Bside: Desktop Mate on Steam. Two games built for different platforms; characters and the character creator are shared, the games are not.</p>
+    <p>Two games, one character creator. One lives on your phone; the other lives on your desktop and on Steam. The characters cross between them.</p>
   </div>
   <div class="duo">
     {duo(mobile, 'bside-mobile-home.jpg', [("App Store", "https://apps.apple.com/us/app/bside/id6757434275"), ("Google Play", "https://play.google.com/store/apps/details?id=com.kotoko.bside")],
-         "Create a character, then raise it. It posts about its day, goes on adventures on its own, appears in your own videos, and talks when you want it to. On iOS and Android since March 2026.")}
+         "Create a character, raise it, and watch it develop a life of its own. It posts about its day, goes on adventures, and shows up in your videos. iOS and Android.")}
     {duo(pc, 'bside-keyart.jpg', [("Steam", "https://store.steampowered.com/app/3649950/Bside/")],
-         "A multiplayer social world with no NPCs. Every character belongs to a player and is run by a multi-agent LLM runtime; players steer with a whisper rather than a joystick. Steam Early Access since October 2025.",
+         "A multiplayer world where every character belongs to a real player and nobody holds a joystick. You whisper suggestions; they decide whether to listen. On Steam.",
          video="/video/bside-desktop-mate.mp4")}
   </div>
 </section>
@@ -248,7 +248,7 @@ def build_home(base, projects, pubs, talks):
 <section class="section" id="papers">
   <div class="section__head">
     <h2>Papers</h2>
-    <p>Research on LLM-driven characters in games.</p>
+    <p>What happens when you give game characters a language model and let go of the script.</p>
   </div>
   {papers_list(pubs)}
   <p style="margin-top:1.2rem"><a href="{base}/publications/">Abstracts</a></p>
@@ -267,9 +267,9 @@ def build_home(base, projects, pubs, talks):
   </div>
   <ul class="road">
     <li><time>2026</time><p>Finalist, Innovator Award, Women in Tech Awards.</p></li>
-    <li><time>2023 – now</time><p><b>Kotoko AI.</b> Technical lead for Bside, Bside: Desktop Mate and Dobit, and the LLM character systems underneath them.</p></li>
-    <li><time>2022 – 2023</time><p><b>Tencent Games, TiMi Studios.</b> Character, control, camera and ability framework systems in Unreal Engine 4 for an AAA open-world action game; Unity work on other titles. Credits: Metal Slug: Awakening; Honor of Kings: Breaking Dawn (cancelled before release); an unannounced AAA anime-style open-world action shooter (cancelled before announcement).</p></li>
-    <li><time>2020 – 2021</time><p><b>NetEase Games.</b> Procedural urban generation in Houdini; stylised rendering for an online multiplayer demo. Credits: Once Human.</p></li>
+    <li><time>2023 – now</time><p><b>Kotoko AI.</b> Building and shipping the AI character systems behind Bside, Desktop Mate, and Dobit.</p></li>
+    <li><time>2022 – 2023</time><p><b>Tencent Games, TiMi Studios.</b> Combat systems, character controllers, cameras. Shipped Metal Slug: Awakening; worked on two titles that got cancelled before you could play them.</p></li>
+    <li><time>2020 – 2021</time><p><b>NetEase Games.</b> Procedural cities in Houdini, stylised rendering. Credits on Once Human.</p></li>
     <li><time>2019 – 2021</time><p><b>Utrecht University</b>, MSc Game and Media Technology.</p></li>
     <li><time>2015 – 2019</time><p><b>University of Chinese Academy of Sciences</b>, BSc Physics.</p></li>
   </ul>
@@ -282,8 +282,8 @@ def build_home(base, projects, pubs, talks):
   </div>
   <div class="aside2">
     <div class="prose">
-      <p>My favourite games are StarCraft II, where I play Zerg and Kerrigan is my favourite character, and the original Overwatch, where I mained D.Va. Overwatch's sound design is what got me into game development. Beyond those I play everything, from big releases to whatever turns up on itch.io.</p>
-      <p>I have played the piano since I was a child, and I am currently teaching myself electric guitar.</p>
+      <p>Zerg main in StarCraft II, D.Va main in the original Overwatch. Overwatch's sound design is the reason I got into making games. I play everything, though, from big releases to whatever surfaces on itch.io.</p>
+      <p>Piano since childhood, currently teaching myself electric guitar.</p>
     </div>
     <div>
       <div class="catpile">
@@ -291,7 +291,7 @@ def build_home(base, projects, pubs, talks):
         <img src="/images/cats/lily.jpg" alt="Lily" width="104" height="104">
         <img src="/images/cats/spot.jpg" alt="Spot" width="104" height="104">
       </div>
-      <p>We rescue street cats, get them neutered and find them homes. Guagua, Lily and Spot stayed. <a href="{base}/cats/">More about the cats</a>.</p>
+      <p>We rescue street cats, get them fixed, and find them homes. Three of them refused to leave. <a href="{base}/cats/">More about the cats</a>.</p>
     </div>
   </div>
 </section>
@@ -299,7 +299,7 @@ def build_home(base, projects, pubs, talks):
 <section class="section" id="contact">
   <div class="section__head">
     <h2>Contact</h2>
-    <p>Open to academic collaboration, reviewing and talks. Messages go straight to my inbox; email is optional.</p>
+    <p>Always happy to talk about research, games, or cats. Messages land straight in my inbox.</p>
   </div>
   {contact_form(base)}
 </section>
@@ -341,7 +341,7 @@ def build_pubs(base, pubs):
     body = f"""
 <header class="pagehead">
   <h1>Papers</h1>
-  <p class="lede">Research on LLM-driven characters in games.</p>
+  <p class="lede">What happens when you give game characters a language model and let go of the script.</p>
 </header>
 {papers_list(pubs, with_summary=True)}
 """
@@ -380,7 +380,7 @@ def build_contact(base):
     body = f"""
 <header class="pagehead">
   <h1>Contact</h1>
-  <p class="lede">Open to academic collaboration, reviewing and talks. Messages go straight to my inbox; email is optional.</p>
+  <p class="lede">Always happy to talk about research, games, or cats. Messages land straight in my inbox.</p>
 </header>
 {contact_form(base)}
 """

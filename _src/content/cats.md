@@ -3,15 +3,15 @@ title: Cats
 lede: Rescue, TNR, and the ones who stayed.
 ---
 
-After losing our first cat Cola, a blue British Shorthair from a backyard breeder, to congenital heart disease at just two and a half years old, our family became advocates for responsible adoption and rescue. That loss taught us what unethical breeding costs, and we would rather fewer cats went through what he did.
+We lost our first cat Cola, a blue British Shorthair from a backyard breeder, to congenital heart disease at two and a half. That changed everything about how we think about cats. Now we rescue street cats, get them neutered, and find them homes.
 
-## What we stand by
+## What we believe in
 
 - Adopt, don't shop
 - Trap-Neuter-Return (TNR) for street cats
 - No backyard breeders, no pet cafés
 - Shelters and street rescues first
-- Emergency care for injured or vulnerable strays
+- Emergency care for any stray that needs it
 
 ## The ones who stayed
 

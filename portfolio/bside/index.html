@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bside – Yunjia Guo</title>
+<meta name="description" content="A character-raising game for iOS and Android, built around AI-native play.">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="top__name" href="/">Yunjia Guo</a>
+  <nav aria-label="Main"><ul class="top__nav"><li><a href="/portfolio/" aria-current="page">Projects</a></li><li><a href="/publications/">Papers</a></li><li><a href="/cv/">CV</a></li><li><a href="/cats/">Cats</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+</header>
+<main class="wrap">
+
+<header class="pagehead">
+  <h1>Bside</h1>
+  <p class="lede">A character-raising game for iOS and Android, built around AI-native play.</p>
+  <ul class="meta"><li>2025 – now</li><li>Technical lead, Kotoko AI</li><li><a href="https://apps.apple.com/us/app/bside/id6757434275">App Store</a></li><li><a href="https://play.google.com/store/apps/details?id=com.kotoko.bside">Google Play</a></li><li><a href="https://www.bside.zone/">bside.zone</a></li></ul>
+</header>
+<img class="hero-img img--phone" src="/images/bside-mobile-home.jpg" alt="">
+<div class="prose">
+<p>Bside launched on iOS and Android in March 2026 and is the product I currently spend most of my time on. Its core is not chat. It is: create a character, then raise it. There are no preset characters and no NPCs. You build yours from personality tags and free text, and that personality drives how it acts, what it posts and how it plays.</p>
+<h2>What the character does</h2>
+<ul>
+<li><strong>A feed.</strong> Your character posts social-media-style updates about its day, so it keeps living between your sessions.</li>
+<li><strong>Adventures.</strong> Scenarios the character plays out on its own, according to its personality, while you watch.</li>
+<li><strong>Playground.</strong> Visual novels written by players, staging scenes from their characters' lives, with branches the authors wrote.</li>
+<li><strong>Vlogs.</strong> Short clips that place your character into footage from your own phone.</li>
+<li><strong>Chat, dress-up and gifts.</strong> Talk to it whenever you like; what you give it affects its mood.</li>
+</ul>
+<h2>Built for the phone</h2>
+<p>Sessions on a phone are short and frequent, latency budgets are tight, and every interaction has to pay for itself. So Bside is built around mobile-native loops: lightweight nurturing, asynchronous presence through the feed, and generative image and video content, which only became affordable enough for a core loop in the last couple of years.</p>
+<p>Bside shares its art style and character creator with <a href="/portfolio/1bside/">Bside: Desktop Mate</a> on Steam, and characters made in one can be used in the other, but they are different games built for different platforms: the PC game runs a real-time multi-agent simulation suited to long sessions; Bside on mobile is built for daily play.</p>
+<hr>
+<p><a href="/portfolio/">All projects</a></p>
+</div>
+
+</main>
+<footer class="wrap foot">
+  <span>Yunjia Guo, 2026</span>
+</footer>
+<script>
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+}
+</script>
+</body>
+</html>

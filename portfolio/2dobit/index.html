@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dobit – Yunjia Guo</title>
+<meta name="description" content="A multiplayer life simulation on mobile where players&#x27; AI characters and NPCs live together in a small town.">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="top__name" href="/">Yunjia Guo</a>
+  <nav aria-label="Main"><ul class="top__nav"><li><a href="/portfolio/" aria-current="page">Projects</a></li><li><a href="/publications/">Papers</a></li><li><a href="/cv/">CV</a></li><li><a href="/cats/">Cats</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+</header>
+<main class="wrap">
+
+<header class="pagehead">
+  <h1>Dobit</h1>
+  <p class="lede">A multiplayer life simulation on mobile where players&#x27; AI characters and NPCs live together in a small town.</p>
+  <ul class="meta"><li>2023 – 2024</li><li>Technical lead, Kotoko AI</li><li><a href="https://www.youtube.com/watch?v=8hRC9d4-f5c">Review on YouTube</a></li><li><a href="https://www.youtube.com/watch?v=LvezYDDMTI4">Another review</a></li></ul>
+</header>
+<img class="hero-img" src="/images/dobit-screenshot.jpg" alt="">
+<div class="prose">
+<p>Dobit was the first product I led at Kotoko AI, before Bside and Bside: Desktop Mate: a multiplayer life simulation for iOS and Android, run as a closed beta in 2023 and 2024. Each player created a Dobit, their own AI character, which then lived in the town of Mystereal alongside other players' Dobits and a cast of named NPCs. Players did not steer their character with a joystick. They told it what they hoped it would do, and it usually did, but not always.</p>
+<h2>How it worked</h2>
+<p><strong>One system for every character.</strong> A multi-agent system drove players' Dobits and the NPCs alike: planning the day, moving around town, working, talking and remembering. Several specialised language models were combined to balance cost and quality.</p>
+<p><strong>Memory as a graph.</strong> Each Dobit kept short-term and long-term memory in a graph store, including its relationships with other Dobits and with places in town. The agents read that memory when they planned and talked.</p>
+<p><strong>Daily letters.</strong> Every day your Dobit wrote you a letter about what it had done. Beta players told us the letters were the moment the character felt alive.</p>
+<p><strong>Character generation.</strong> One sentence of description became a game-ready character: artist-drawn parts and outfits were combined, rigged and animated automatically.</p>
+<p><strong>Staged conversations.</strong> When one character decided to talk to another, a single model call wrote the whole exchange and the participants acted it out face to face. Coherent little scenes, and the reason the next product changed how conversation works.</p>
+<h2>What it taught us</h2>
+<p>Open-ended generation produced signs of life: rumours that spread through the whole town, a shopkeeper who could think of nothing but her cats. It also showed that characters need rules the model cannot give itself, about interruption, about ending a conversation, about which actions the game can actually execute. Those lessons became the runtime in <a href="/portfolio/1bside/">Bside: Desktop Mate</a>, and the road from one to the other is the subject of a case study accepted at AIIDE 2026. See <a href="/publications/">Papers</a>.</p>
+<p>Built with Unity, Stable Diffusion and a custom LLM integration layer.</p>
+<hr>
+<p><a href="/portfolio/">All projects</a></p>
+</div>
+
+</main>
+<footer class="wrap foot">
+  <span>Yunjia Guo, 2026</span>
+</footer>
+<script>
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+}
+</script>
+</body>
+</html>
