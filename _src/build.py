@@ -85,14 +85,20 @@ def page(base, *, title, body, current=None, description=""):
 <footer class="wrap foot">
   <span>Sherry Guo, 2026</span>
 </footer>
-<script>
-if (matchMedia('(prefers-reduced-motion: reduce)').matches) {{
-  document.querySelectorAll('video[autoplay]').forEach(function (v) {{ v.removeAttribute('autoplay'); v.pause(); }});
-}}
-</script>
+{sprite_config()}<script src="{base}/site.js" defer></script>
 </body>
 </html>
 """
+
+
+def sprite_config():
+    """Inline config for the roaming character, if _src/content/sprite.yml exists."""
+    path = os.path.join(CONTENT, "sprite.yml")
+    if not os.path.exists(path):
+        return ""
+    import json
+    cfg = yaml.safe_load(read(path))
+    return f"<script>window.SPRITE={json.dumps(cfg)}</script>" + chr(10)
 
 
 def write(out, rel, content):
@@ -121,6 +127,25 @@ def load_pubs():
 
 def load_talks():
     return yaml.safe_load(read(os.path.join(CONTENT, "talks.yml")))
+
+
+def load_now():
+    return yaml.safe_load(read(os.path.join(CONTENT, "now.yml"))) or []
+
+
+def cat_counts():
+    """Count the cats listed on the cats page: (found a home, stayed)."""
+    _, text = front_matter(read(os.path.join(CONTENT, "cats.md")))
+    stayed = text.split("## The ones who stayed", 1)[1].split("## Found a home", 1)[0]
+    rehomed = text.split("## Found a home", 1)[1]
+    n_stayed = len(re.findall(r"<figure>", stayed)) - 1   # Cola is remembered, not resident
+    n_rehomed = len(re.findall(r"<figure>", rehomed))
+    return n_rehomed, n_stayed
+
+
+def now_line(now):
+    items = "".join(f'<li><span aria-hidden="true">{esc(n["emoji"])}</span> {esc(n["text"])}</li>' for n in now)
+    return f'<div class="now"><span class="now__label">Now</span><ul>{items}</ul></div>'
 
 
 def talks_list(talks):
@@ -189,7 +214,8 @@ if (new URLSearchParams(location.search).get('sent') === '1') {{
 
 # ---------------------------------------------------------------- pages
 
-def build_home(base, projects, pubs, talks):
+def build_home(base, projects, pubs, talks, now):
+    rehomed, stayed = cat_counts()
     mobile = next(p for p in projects if p["slug"] == "bside")
     pc = next(p for p in projects if p["slug"] == "1bside")
     rest = [p for p in projects if p["slug"] not in ("bside", "1bside")]
@@ -218,6 +244,7 @@ def build_home(base, projects, pubs, talks):
       <li><a href="{base}/publications/">Papers</a></li>
       <li><a href="https://www.linkedin.com/in/yunjiaguo/">LinkedIn</a></li>
     </ul>
+    {now_line(now)}
   </div>
   <figure class="snap">
     <img src="/images/me.jpg" alt="Sherry Guo" width="1536" height="1152">
@@ -291,7 +318,12 @@ def build_home(base, projects, pubs, talks):
         <img src="/images/cats/lily.jpg" alt="Lily" width="104" height="104">
         <img src="/images/cats/spot.jpg" alt="Spot" width="104" height="104">
       </div>
-      <p>We rescue street cats, get them fixed, and find them homes. Three of them refused to leave. <a href="{base}/cats/">More about the cats</a>.</p>
+      <p>We rescue street cats, get them fixed, and find them homes. Three of them refused to leave.</p>
+      <ul class="stats">
+        <li><b>{rehomed}+</b><span>found homes since 2020</span></li>
+        <li><b>{stayed}</b><span>stayed</span></li>
+      </ul>
+      <p><a href="{base}/cats/">More about the cats</a>.</p>
     </div>
   </div>
 </section>
@@ -387,11 +419,32 @@ def build_contact(base):
     return page(base, title="Contact", body=body, current="/contact/")
 
 
+# Paths the old Academic Pages site served; send them to the new location.
+OLD_PATHS = {
+    "publication/2026-04-06-bounded-autonomy": "/publications/#bounded-autonomy",
+    "publication/2026-11-01-raise-dont-replace": "/publications/#raise-dont-replace",
+    "publication/2026-11-15-dobit-to-bside": "/publications/#dobit-to-bside",
+    "year-archive": "/publications/",
+    "talks": "/#talks",
+}
+
+
+def redirect_page(base, target):
+    url = f"{base}{target}"
+    return f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Moved</title>
+<meta http-equiv="refresh" content="0; url={esc(url)}">
+<link rel="canonical" href="{esc(SITE_URL + url)}">
+</head><body><p>Moved to <a href="{esc(url)}">{esc(url)}</a>.</p></body></html>
+"""
+
+
 def build_404(base):
     body = f"""
 <header class="pagehead">
-  <h1>Page not found</h1>
-  <p class="lede"><a href="{base}/">Back to the start</a>.</p>
+  <h1>Not enough minerals.</h1>
+  <p class="lede">This page was never built. If you came from an old link, the site moved; the papers and projects are still here.</p>
+  <ul class="meta"><li><a href="{base}/">Back to base</a></li><li><a href="{base}/portfolio/">Projects</a></li><li><a href="{base}/publications/">Papers</a></li></ul>
 </header>
 """
     return page(base, title="Not found", body=body)
@@ -410,8 +463,11 @@ def main():
     projects = load_projects()
     pubs = load_pubs()
     talks = load_talks()
+    now = load_now()
 
-    write(out, "index.html", build_home(base, projects, pubs, talks))
+    write(out, "index.html", build_home(base, projects, pubs, talks, now))
+    for old, target in OLD_PATHS.items():
+        write(out, f"{old}/index.html", redirect_page(base, target))
     write(out, "portfolio/index.html", build_projects_index(base, projects))
     for p in projects:
         write(out, f"portfolio/{p['slug']}/index.html", build_project(base, p))
@@ -421,6 +477,7 @@ def main():
     write(out, "contact/index.html", build_contact(base))
     write(out, "404.html", build_404(base))
     shutil.copyfile(os.path.join(HERE, "style.css"), os.path.join(out, "style.css"))
+    shutil.copyfile(os.path.join(HERE, "site.js"), os.path.join(out, "site.js"))
     print(f"built into {out} with base '{base or '/'}'")
 
 

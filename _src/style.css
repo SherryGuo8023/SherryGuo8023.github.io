@@ -109,6 +109,12 @@ figure { margin: 0; }
   max-width: 12ch;
   margin-bottom: 1.4rem;
 }
+.hero__aka {
+  font-size: 0.45em;
+  font-weight: 400;
+  color: var(--ink-2);
+  letter-spacing: 0;
+}
 .hero__lede {
   font-size: 1.22rem;
   line-height: 1.45;
@@ -127,6 +133,8 @@ figure { margin: 0; }
 }
 .snap img { aspect-ratio: 4 / 3; object-fit: cover; object-position: 55% 40%; }
 .snap { padding-bottom: 8px; }
+.snap--live { cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; will-change: transform; }
+.snap--held { cursor: grabbing; box-shadow: 0 22px 40px -20px rgba(31, 33, 35, 0.55); }
 
 /* ---------- sections ---------- */
 
@@ -283,19 +291,38 @@ figure { margin: 0; }
 .hero-img { border-radius: 6px; margin: 1.5rem 0 2.5rem; }
 .hero-img.img--phone { max-width: 320px; }
 
-/* cats grid */
+/* cats: prints stuck on the wall */
 
 .cats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem 1.4rem;
-  margin: 1.2rem 0 2.5rem;
+  gap: 2.2rem 1.8rem;
+  margin: 1.6rem 0 3rem;
+  padding: 0.6rem 0.4rem;
 }
-.cats img { aspect-ratio: 1; object-fit: cover; border-radius: 6px; margin: 0; }
-.cats figcaption { margin-top: 0.55rem; line-height: 1.35; }
+.cats figure {
+  --r: 0deg;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 8px 8px 10px;
+  box-shadow: 0 10px 30px -18px rgba(31, 33, 35, 0.45);
+  transform: rotate(var(--r));
+}
+.cats figure:nth-child(4n + 1) { --r: -2deg; }
+.cats figure:nth-child(4n + 2) { --r: 1.4deg; margin-top: 1.4rem; }
+.cats figure:nth-child(4n + 3) { --r: -0.9deg; }
+.cats figure:nth-child(4n)     { --r: 2.1deg; margin-top: 1rem; }
+.cats figure:hover { transform: rotate(0deg) translateY(-3px); box-shadow: 0 18px 36px -18px rgba(31, 33, 35, 0.5); }
+.cats img { aspect-ratio: 1; object-fit: cover; border-radius: 2px; margin: 0; }
+.cats figcaption { margin-top: 0.55rem; line-height: 1.35; padding-inline: 0.2rem; }
 .cats figcaption b { display: block; }
 .cats figcaption span { color: var(--ink-2); font-size: 0.95rem; }
-.cats--small { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.cats--small { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.8rem 1.4rem; }
+.cats--small figure:nth-child(5n + 1) { --r: 1.6deg; margin-top: 0; }
+.cats--small figure:nth-child(5n + 2) { --r: -1.2deg; margin-top: 1.1rem; }
+.cats--small figure:nth-child(5n + 3) { --r: 2deg; margin-top: 0; }
+.cats--small figure:nth-child(5n + 4) { --r: -2.2deg; margin-top: 0.8rem; }
+.cats--small figure:nth-child(5n)     { --r: 1deg; margin-top: 0.3rem; }
 
 /* footer */
 
@@ -326,9 +353,55 @@ figure { margin: 0; }
   .row { grid-template-columns: 96px minmax(0, 1fr); }
   .row__when { grid-column: 2; }
   .road li { grid-template-columns: 1fr; gap: 0.1rem; }
-  .cats, .cats--small { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cats, .cats--small { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 1.2rem; }
+  .cats figure { margin-top: 0 !important; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   a, .form button { transition: color 120ms ease, background-color 120ms ease; }
+  .cats figure { transition: transform 160ms ease, box-shadow 160ms ease; }
+}
+
+/* ---------- now line ---------- */
+
+.now {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+.now__label {
+  color: var(--red);
+  font-weight: 650;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.now ul { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; margin: 0; padding: 0; list-style: none; }
+.now li { margin: 0; }
+.now li span { margin-right: 0.25em; }
+
+/* ---------- small stats ---------- */
+
+.stats { display: flex; gap: 2.2rem; margin: 0.4rem 0 1rem; padding: 0; list-style: none; }
+.stats li { margin: 0; line-height: 1.2; }
+.stats b { display: block; font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
+.stats span { color: var(--ink-2); font-size: 0.95rem; }
+
+/* ---------- the roaming character (see site.js) ---------- */
+
+.roam {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  background-repeat: no-repeat;
+  image-rendering: auto;
+  pointer-events: none;
+  transform-origin: center bottom;
 }

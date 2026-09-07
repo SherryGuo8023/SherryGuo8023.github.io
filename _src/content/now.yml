@@ -1,0 +1,8 @@
+# The "Now" line under the hero. Keep to three items; one emoji each.
+# Edit freely, then run: python _src/build.py
+- emoji: "🎮"
+  text: "Shipping Bside updates"
+- emoji: "🎸"
+  text: "Teaching myself electric guitar"
+- emoji: "🐱"
+  text: "Three cats supervising"

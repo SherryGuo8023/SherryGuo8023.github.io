@@ -27,6 +27,7 @@
       <li><a href="/publications/">Papers</a></li>
       <li><a href="https://www.linkedin.com/in/yunjiaguo/">LinkedIn</a></li>
     </ul>
+    <div class="now"><span class="now__label">Now</span><ul><li><span aria-hidden="true">🎮</span> Shipping Bside updates</li><li><span aria-hidden="true">🎸</span> Teaching myself electric guitar</li><li><span aria-hidden="true">🐱</span> Three cats supervising</li></ul></div>
   </div>
   <figure class="snap">
     <img src="/images/me.jpg" alt="Sherry Guo" width="1536" height="1152">
@@ -167,7 +168,12 @@
         <img src="/images/cats/lily.jpg" alt="Lily" width="104" height="104">
         <img src="/images/cats/spot.jpg" alt="Spot" width="104" height="104">
       </div>
-      <p>We rescue street cats, get them fixed, and find them homes. Three of them refused to leave. <a href="/cats/">More about the cats</a>.</p>
+      <p>We rescue street cats, get them fixed, and find them homes. Three of them refused to leave.</p>
+      <ul class="stats">
+        <li><b>5+</b><span>found homes since 2020</span></li>
+        <li><b>3</b><span>stayed</span></li>
+      </ul>
+      <p><a href="/cats/">More about the cats</a>.</p>
     </div>
   </div>
 </section>
@@ -204,10 +210,6 @@ if (new URLSearchParams(location.search).get('sent') === '1') {
 <footer class="wrap foot">
   <span>Sherry Guo, 2026</span>
 </footer>
-<script>
-if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
-}
-</script>
+<script src="/site.js" defer></script>
 </body>
 </html>
